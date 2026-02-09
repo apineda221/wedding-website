@@ -1,29 +1,147 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Abelardo & Keren</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-
 <body>
 
-  <section id="save-the-date" style="min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;">
-    <div>
-      <h1>Abelardo & Keren</h1>
-      <p>We’re getting married</p>
-      <p><strong>November 27, 2026</strong></p>
-      <p>Ponchatoula, Louisiana</p>
+  <!-- Top Navigation -->
+  <header class="nav">
+    <a class="brand" href="#home">A & K</a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#ourstory">Our Story</a>
+      <a href="#details">Details</a>
+      <a href="#bridalparty">Bridal Party</a>
+      <a class="nav-cta" href="#rsvp">RSVP</a>
+    </nav>
+
+    <button class="nav-menu" id="menuBtn" aria-label="Open menu">Menu</button>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home">Home</a>
+    <a href="#ourstory">Our Story</a>
+    <a href="#details">Details</a>
+    <a href="#bridalparty">Bridal Party</a>
+    <a href="#rsvp">RSVP</a>
+  </div>
+
+  <!-- HOME -->
+  <section id="home" class="section hero">
+    <div class="card hero-card">
+      <h1>Abelardo &amp; Keren</h1>
+      <p class="muted">We’re getting married</p>
+      <p><strong>October 10, 2026</strong></p>
+      <p class="muted">New Orleans, Louisiana</p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#rsvp">RSVP</a>
+        <a class="btn" href="#details">View Details</a>
+      </div>
     </div>
   </section>
 
-  <!-- JS -->
+  <!-- OUR STORY -->
+  <section id="ourstory" class="section">
+    <div class="wrap">
+      <h2>Our Story</h2>
+      <p class="lead">
+        Add your story here — how you met, what clicked, and what you’re most excited about.
+      </p>
+
+      <div class="grid two">
+        <div class="panel">
+          <h3>How We Met</h3>
+          <p class="muted">Write a short paragraph here.</p>
+        </div>
+
+        <div class="panel">
+          <h3>The Proposal</h3>
+          <p class="muted">Write a short paragraph here.</p>
+        </div>
+      </div>
+
+      <div class="panel media">
+        <h3>Proposal Clips</h3>
+        <p class="muted">We’ll add your video(s) here next (YouTube/Vimeo embed or mp4).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section id="details" class="section alt">
+    <div class="wrap">
+      <h2>Wedding Details</h2>
+
+      <div class="grid two">
+        <div class="panel">
+          <h3>Ceremony &amp; Reception</h3>
+          <ul class="list">
+            <li><strong>Venue:</strong> Venue Name</li>
+            <li><strong>Address:</strong> 123 Venue St, New Orleans, LA</li>
+            <li><strong>Time:</strong> 4:30 PM</li>
+            <li><strong>Dress Code:</strong> Cocktail Attire</li>
+          </ul>
+          <a class="link" href="https://www.google.com/maps" target="_blank" rel="noopener">Open in Maps →</a>
+        </div>
+
+        <div class="panel">
+          <h3>Schedule</h3>
+          <ul class="list">
+            <li><strong>4:00 PM</strong> — Guests arrive</li>
+            <li><strong>4:30 PM</strong> — Ceremony</li>
+            <li><strong>5:30 PM</strong> — Cocktail hour</li>
+            <li><strong>6:30 PM</strong> — Reception</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDAL PARTY -->
+  <section id="bridalparty" class="section">
+    <div class="wrap">
+      <h2>Bridal Party</h2>
+      <p class="lead">
+        Something nice + meaningful. You can add names, roles, and a short line about each person.
+      </p>
+
+      <div class="grid two">
+        <div class="panel">
+          <h3>Bridesmaids</h3>
+          <ul class="list">
+            <li><strong>Name</strong> — short sweet note</li>
+            <li><strong>Name</strong> — short sweet note</li>
+            <li><strong>Name</strong> — short sweet note</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Groomsmen</h3>
+          <ul class="list">
+            <li><strong>Name</strong> — short sweet note</li>
+            <li><strong>Name</strong> — short sweet note</li>
+            <li><strong>Name</strong> — short sweet note</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp" class="section alt">
+    <div class="wrap">
+      <h2>RSVP</h2>
+      <p class="lead">Tap below to RSVP. (We’ll connect your form next.)</p>
+
+      <div class="panel center">
+        <a class="btn primary" href="https://forms.gle/" target="_blank" rel="noopener">RSVP Now</a>
+        <p class="muted tiny">Replace this link with your Google Form link when ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="tiny muted">Made with love — Abelardo &amp; Keren</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
-</html>
