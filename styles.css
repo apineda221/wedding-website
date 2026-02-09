@@ -1,0 +1,58 @@
+/* Base reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #f9f6f2;
+  color: #1c1c1c;
+}
+
+/* Save the Date section */
+#save-the-date {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Typography */
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 6px 0;
+}
+
+strong {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* Subtle elegance */
+#save-the-date div {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 50px 60px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  #save-the-date div {
+    padding: 35px 25px;
+  }
+}
