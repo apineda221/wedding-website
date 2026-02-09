@@ -1,3 +1,6 @@
+/* Makes anchor jumps land below the sticky nav */
+:root { scroll-padding-top: 90px; }
+
 :root{
   --bg:#f9f6f2;
   --ink:#1c1c1c;
