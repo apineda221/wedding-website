@@ -318,3 +318,13 @@ p{ margin:8px 0; font-size:16px; }
   }
 }
 
+/* Date styled like the names */
+.hero-date{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin: 14px 0 6px;
+  color: rgba(28,28,28,.88);
+}
