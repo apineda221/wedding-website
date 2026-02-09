@@ -1,39 +1,55 @@
+/* =========================================================
+   A & K — styles.css (CLEAN + BURGUNDY + HERO VIDEO TEXT)
+   Paste this entire file and replace your current one.
+   ========================================================= */
+
 /* Makes anchor jumps land below the sticky nav */
 :root { scroll-padding-top: 90px; }
 
+/* Theme */
 :root{
-  --bg:#f9f6f2;
+  --burgundy:#5A1F2B;
+  --cream:#FBF7F3;
+
+  --bg: var(--cream);
   --ink:#1c1c1c;
   --muted:#6a6763;
-  --card:rgba(255,255,255,.72);
+
   --border:rgba(0,0,0,.10);
   --shadow:0 20px 45px rgba(0,0,0,.10);
   --radius:18px;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
 body{
   margin:0;
   font-family:'Inter', system-ui, -apple-system, sans-serif;
-  background:var(--bg);
-  color:var(--ink);
+  background: var(--burgundy);     /* ✅ Burgundy page frame */
+  color: var(--ink);
 }
 
-a{color:inherit; text-decoration:none}
-.wrap{max-width:980px; margin:0 auto; padding:0 18px}
+a{ color:inherit; text-decoration:none; }
+.wrap{ max-width:980px; margin:0 auto; padding:0 18px; }
 
+/* =========================================================
+   NAV
+   ========================================================= */
 .nav{
   position:sticky;
   top:0;
   z-index:50;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:14px 18px;
-  background: rgba(249, 246, 242, 0.55);
+
+  /* ✅ Burgundy header */
+  background: rgba(90,31,43,.92);
   backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,.18);
 }
 
 .brand{
@@ -41,6 +57,7 @@ a{color:inherit; text-decoration:none}
   font-size:22px;
   font-weight:600;
   letter-spacing:.04em;
+  color:#fff;
 }
 
 .nav-links{
@@ -51,125 +68,168 @@ a{color:inherit; text-decoration:none}
 
 .nav-links a{
   font-size:14px;
-  color:var(--muted);
+  color: rgba(255,255,255,.78);
 }
 
-.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover{ color:#fff; }
 
 .nav-cta{
   padding:10px 14px;
-  border:1px solid var(--border);
+  border:1px solid rgba(255,255,255,.35);
   border-radius:999px;
-  background:rgba(255,255,255,.6);
-  color:var(--ink) !important;
+  background: rgba(255,255,255,.92);
+  color: var(--burgundy) !important;
 }
 
 .nav-menu{
   display:none;
   padding:10px 12px;
-  border:1px solid var(--border);
+  border:1px solid rgba(255,255,255,.35);
   border-radius:999px;
-  background:rgba(255,255,255,.6);
+  background: rgba(255,255,255,.92);
   cursor:pointer;
+  color: var(--burgundy);
 }
 
+/* Mobile dropdown */
 .mobile-nav{
   display:none;
   position:sticky;
   top:60px;
   z-index:40;
   padding:10px 18px;
-  background:rgba(249,246,242,.95);
-  border-bottom:1px solid var(--border);
+  background: rgba(90,31,43,.96);
+  border-bottom: 1px solid rgba(255,255,255,.18);
 }
 .mobile-nav a{
   display:block;
   padding:10px 0;
-  color:var(--muted);
+  color: rgba(255,255,255,.80);
 }
-.mobile-nav a:hover{color:var(--ink)}
+.mobile-nav a:hover{ color:#fff; }
 
-.section{padding:88px 0}
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+.section{
+  padding:88px 0;
+  background: var(--cream);     /* ✅ Sections stay cream */
+}
+
 .section.alt{
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  background:rgba(255,255,255,.35);
+  border-top:1px solid rgba(0,0,0,.08);
+  border-bottom:1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.35);
 }
 
+/* =========================================================
+   HERO VIDEO (NO BOX — FLOATING TEXT)
+   HTML expectation:
+   <section class="hero" ...>
+     <video class="hero-video" ...></video>
+     <div class="hero-overlay"></div>
+     <div class="hero-content">...</div>
+   </section>
+   ========================================================= */
 .hero{
+  position:relative;
   min-height:85vh;
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+
+  /* ✅ so the hero edge blends into burgundy outside */
+  background: var(--burgundy);
 }
-
-.hero{
-  position: relative;
-  min-height: 85vh;
-  overflow: hidden;
-
-  /* This centers your card even if other flex rules exist */
-  display: block;
-}
-
 
 .hero-video{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-
-  /* Important: makes it truly fill */
-  object-fit: cover;
-  object-position: center;
-
-  /* Safari sometimes needs these */
-  min-width: 100%;
-  min-height: 100%;
-
-  z-index: 0;
-  display: block;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  z-index:0;
 }
 
+/* ✅ “Transparent” wash over the video */
 .hero-overlay{
-  position: absolute;
-  inset: 0;
-
-  /* This is what makes the video “transparent” */
-  background: rgba(249, 246, 242, 0.55); /* increase 0.55 → 0.70 for more fade */
-  z-index: 1;
+  position:absolute;
+  inset:0;
+  background: rgba(251,247,243,.45); /* adjust 0.35–0.60 */
+  z-index:1;
 }
 
-.hero-card{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  z-index: 2;
+/* ✅ Floating text area */
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding: 24px;
+  max-width: 980px;
 }
 
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+/* Elegant floating typography like the example */
+.hero-kicker{
+  font-family:'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  letter-spacing: .08em;
+  opacity:.90;
+  margin:0 0 18px;
+  color: rgba(28,28,28,.85);
 }
 
-.hero-card{
-  padding:58px 60px;
-  max-width:780px;
-}
-
-h1{
+.hero-content h1{
   font-family:'Cormorant Garamond', serif;
   font-weight:500;
-  font-size:64px;
-  margin:0 0 8px;
-  line-height:1.05;
+  font-size:72px;
+  margin:0 0 12px;
+  line-height:1.02;
+  color: rgba(28,28,28,.92);
 }
 
+.hero-content p{
+  margin:8px 0;
+  font-size:16px;
+  color: rgba(28,28,28,.78);
+}
+
+/* subtle readability without a box */
+.hero-content h1,
+.hero-content p,
+.hero-kicker{
+  text-shadow: 0 10px 30px rgba(0,0,0,.10);
+}
+
+/* Buttons */
+.hero-actions{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.72);
+  font-weight:500;
+}
+
+.btn.primary{
+  background: var(--burgundy);
+  color: #fff;
+  border-color: rgba(255,255,255,.20);
+}
+
+/* =========================================================
+   TYPE + COMPONENTS
+   ========================================================= */
 h2{
   font-family:'Cormorant Garamond', serif;
   font-weight:500;
@@ -184,36 +244,33 @@ h3{
   margin:0 0 10px;
 }
 
-p{margin:8px 0; font-size:16px}
-.muted{color:var(--muted)}
-.tiny{font-size:12px}
+p{ margin:8px 0; font-size:16px; }
+.muted{ color: var(--muted); }
+.tiny{ font-size:12px; }
 
 .lead{
-  color:var(--muted);
+  color: var(--muted);
   font-size:17px;
   max-width:70ch;
   margin:10px 0 26px;
 }
 
-.grid{
-  display:grid;
-  gap:16px;
-}
-.grid.two{grid-template-columns:repeat(2, 1fr)}
+.grid{ display:grid; gap:16px; }
+.grid.two{ grid-template-columns:repeat(2,1fr); }
 
 .panel{
-  background:var(--card);
+  background: rgba(255,255,255,.72);
   border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   padding:20px;
 }
 
-.panel.media{margin-top:16px}
-.panel.center{text-align:center}
+.panel.media{ margin-top:16px; }
+.panel.center{ text-align:center; }
 
-.list{margin:10px 0 0; padding-left:18px; color:var(--muted)}
-.list li{margin:10px 0}
+.list{ margin:10px 0 0; padding-left:18px; color: var(--muted); }
+.list li{ margin:10px 0; }
 
 .link{
   display:inline-block;
@@ -222,209 +279,23 @@ p{margin:8px 0; font-size:16px}
   text-underline-offset:4px;
 }
 
-.hero-actions{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:22px;
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 18px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.55);
-  font-weight:500;
-}
-
-.btn.primary{
-  background:var(--ink);
-  color:var(--bg);
-}
-
+/* Footer */
 .footer{
   padding:40px 18px;
   text-align:center;
-  color:var(--muted);
+  color: rgba(255,255,255,.75);
+  background: var(--burgundy);
 }
 
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 860px){
-  .nav-links{display:none}
-  .nav-menu{display:inline-block}
-  .grid.two{grid-template-columns:1fr}
-  h1{font-size:44px}
-  h2{font-size:36px}
-  .hero-card{padding:44px 28px}
-}
+  .nav-links{ display:none; }
+  .nav-menu{ display:inline-block; }
 
-/* ---------- HERO: typography + animated background ---------- */
+  .grid.two{ grid-template-columns:1fr; }
 
-.hero-bg{
-  position: relative;
-  overflow: hidden;
-  padding-top: 110px; /* gives space under sticky nav */
-  padding-bottom: 90px;
-}
-
-/* Moving background (GIF) */
-.bg-media{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.03);
-}
-
-
-/* Soft overlay so text is readable */
-.bg-overlay{
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(249,246,242,.30),
-    rgba(249,246,242,.70)
-  );
-}
-
-/* Keep your content above background */
-.hero-bg .hero-card{
-  position: relative;
-  z-index: 2;
-}
-
-/* Elegant typography */
-.kicker{
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(28,28,28,.72);
-  margin: 0 0 14px;
-}
-
-.hero-title{
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 500;
-  font-size: 64px;
-  line-height: 1.05;
-  margin: 0 0 10px;
-}
-
-.amp{
-  opacity: .75;
-  padding: 0 6px;
-}
-
-.hero-subtitle{
-  color: rgba(28,28,28,.70);
-  font-size: 18px;
-  margin: 0 0 22px;
-}
-
-/* Glassy hero card to match luxury vibe */
-.hero-card--glass{
-  background: rgba(255,255,255,.62);
-  border: 1px solid rgba(255,255,255,.55);
-  backdrop-filter: blur(12px);
-}
-
-/* Meta rows */
-.hero-meta{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 18px 0 18px;
-}
-
-.meta-item{
-  padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.55);
-}
-
-.meta-label{
-  font-size: 12px;
-  letter-spacing: .10em;
-  text-transform: uppercase;
-  color: rgba(28,28,28,.62);
-}
-
-.meta-value{
-  margin-top: 6px;
-  font-weight: 500;
-  color: rgba(28,28,28,.88);
-}
-
-/* Mobile */
-@media (max-width: 860px){
-  .hero-title{ font-size: 44px; }
-  .hero-meta{ grid-template-columns: 1fr; }
-}
-
-/* HERO VIDEO BACKGROUND */
-.hero{
-  position: relative;
-  min-height: 85vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  text-align:center;
-}
-
-.hero-video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
-}
-
-/* Dark/soft overlay so text reads well */
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(255,255,255,.35); /* make smaller for less “washed out” */
-  z-index:1;
-}
-
-/* FLOATING TEXT (NO BOX) */
-.hero-content{
-  position:relative;
-  z-index:2;
-  padding: 24px;
-  max-width: 980px;
-}
-
-.hero-content h1,
-.hero-content p,
-.hero-content a{
-  color: #111; /* or use your var(--ink) */
-}
-
-.hero-kicker{
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  letter-spacing: .06em;
-  margin: 0 0 14px;
-  opacity: .9;
-}
-
-/* Add subtle text shadow for readability on video */
-.hero-content h1,
-.hero-content p{
-  text-shadow: 0 8px 24px rgba(0,0,0,.12);
-}
-
-/* IMPORTANT: disable the box look if it still exists */
-.hero-card{
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+  .hero-content h1{ font-size:48px; }
+  h2{ font-size:36px; }
 }
