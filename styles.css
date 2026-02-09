@@ -299,3 +299,22 @@ p{ margin:8px 0; font-size:16px; }
   .hero-content h1{ font-size:48px; }
   h2{ font-size:36px; }
 }
+
+/* Elegant cursive hero text (matching reference image) */
+.hero-script{
+  font-family: 'Italianno', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: .06em;
+  margin: 10px 0;
+  color: rgba(28,28,28,.85);
+  text-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+
+/* Slightly smaller on mobile */
+@media (max-width: 860px){
+  .hero-script{
+    font-size: 22px;
+  }
+}
+
