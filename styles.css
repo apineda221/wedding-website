@@ -303,9 +303,9 @@ p{ margin:8px 0; font-size:16px; }
 /* Elegant cursive hero text (matching reference image) */
 .hero-script{
   font-family: 'Italianno', cursive;
-  font-size: 28px;
+  font-size: 32px;        /* ⬆ bigger */
   font-weight: 400;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
   margin: 10px 0;
   color: rgba(28,28,28,.85);
   text-shadow: 0 6px 18px rgba(0,0,0,.18);
@@ -314,7 +314,7 @@ p{ margin:8px 0; font-size:16px; }
 /* Slightly smaller on mobile */
 @media (max-width: 860px){
   .hero-script{
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 
