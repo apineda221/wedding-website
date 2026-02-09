@@ -39,44 +39,31 @@
   </div>
 
   <!-- HOME -->
- <section id="home" class="section hero hero-bg">
-  <!-- Animated background layer -->
-<video
-  class="bg-media"
-  autoplay
-  muted
-  loop
-  playsinline
-  aria-hidden="true">
-  <source src="./assets/hero.mp4" type="video/mp4">
-</video>
-  <!-- Optional overlay for readability -->
-  <div class="bg-overlay" aria-hidden="true"></div>
+<section id="home" class="section hero">
 
-  <div class="card hero-card hero-card--glass">
-    <p class="kicker">SAVE THE DATE</p>
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="assets/hero.mp4" type="video/mp4" />
+  </video>
 
-    <h1 class="hero-title">Abelardo <span class="amp">&amp;</span> Keren</h1>
+  <!-- Overlay so text pops -->
+  <div class="hero-overlay"></div>
 
-    <p class="hero-subtitle">We’re getting married</p>
-
-    <div class="hero-meta">
-      <div class="meta-item">
-        <div class="meta-label">Date</div>
-        <div class="meta-value">October 10, 2026</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-label">Location</div>
-        <div class="meta-value">New Orleans, Louisiana</div>
-      </div>
-    </div>
+  <!-- Your card content -->
+  <div class="card hero-card">
+    <h1>Abelardo &amp; Keren</h1>
+    <p class="muted">We’re getting married</p>
+    <p><strong>October 10, 2026</strong></p>
+    <p class="muted">New Orleans, Louisiana</p>
 
     <div class="hero-actions">
       <a class="btn primary" href="#rsvp">RSVP</a>
       <a class="btn" href="#details">View Details</a>
     </div>
   </div>
+
 </section>
+
 
 
   <!-- OUR STORY -->
