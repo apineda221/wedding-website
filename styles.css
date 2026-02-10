@@ -135,6 +135,7 @@ a{ color:inherit; text-decoration:none; }
    </section>
    ========================================================= */
 .hero{
+  padding-top: 90px; /* space for floating nav */
   position:relative;
   min-height:85vh;
   overflow:hidden;
@@ -145,6 +146,7 @@ a{ color:inherit; text-decoration:none; }
 
   /* ✅ so the hero edge blends into burgundy outside */
   background: var(--burgundy);
+   
 }
 
 .hero-video{
