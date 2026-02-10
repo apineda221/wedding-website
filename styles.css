@@ -149,8 +149,12 @@ a{ color:inherit; text-decoration:none; }
 .hero-overlay{
   position:absolute;
   inset:0;
-  background: rgba(251,247,243,.45);
   z-index:1;
+
+  /* push overlay BELOW the nav */
+  top: 90px;
+
+  background: rgba(251,247,243,.45); /* adjust if needed */
 }
 
 .hero-content{
