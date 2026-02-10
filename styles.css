@@ -1,12 +1,14 @@
 /* =========================================================
-   A & K — styles.css (CLEAN + BURGUNDY + HERO VIDEO TEXT)
-   Paste this entire file and replace your current one.
+   A & K — styles.css (CLEAN + BURGUNDY + SEAMLESS HERO VIDEO)
+   Replace your entire styles.css with this file.
    ========================================================= */
 
-/* Makes anchor jumps land below the sticky nav */
+/* Makes anchor jumps land below the fixed nav */
 :root { scroll-padding-top: 90px; }
 
-/* Theme */
+/* =========================================================
+   THEME VARIABLES
+   ========================================================= */
 :root{
   --burgundy:#501b21;
   --cream:#FBF7F3;
@@ -26,7 +28,7 @@ html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family:'Inter', system-ui, -apple-system, sans-serif;
-  background: var(--burgundy);     /* ✅ Burgundy page frame */
+  background: var(--burgundy);     /* ✅ Burgundy frame */
   color: var(--ink);
 }
 
@@ -34,10 +36,10 @@ a{ color:inherit; text-decoration:none; }
 .wrap{ max-width:980px; margin:0 auto; padding:0 18px; }
 
 /* =========================================================
-   NAV
+   NAV (FLOATS ON TOP OF HERO VIDEO)
    ========================================================= */
 .nav{
-  position: fixed; /* IMPORTANT */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -48,11 +50,12 @@ a{ color:inherit; text-decoration:none; }
   justify-content:space-between;
   padding:18px 24px;
 
-  background: rgba(90, 31, 43, 0.35); /* burgundy glass */
+  /* ✅ Transparent “glass” over video */
+  background: rgba(80, 27, 33, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255,255,255,.15);
+  border-bottom: 1px solid rgba(255,255,255,.14);
 }
 
 .brand{
@@ -71,9 +74,8 @@ a{ color:inherit; text-decoration:none; }
 
 .nav-links a{
   font-size:14px;
-  color: rgba(255,255,255,.78);
+  color: rgba(255,255,255,.82);
 }
-
 .nav-links a:hover{ color:#fff; }
 
 .nav-cta{
@@ -97,26 +99,27 @@ a{ color:inherit; text-decoration:none; }
 /* Mobile dropdown */
 .mobile-nav{
   display:none;
-  position:sticky;
-  top:60px;
-  z-index:40;
+  position: sticky;
+  top: 70px; /* under fixed nav */
+  z-index: 99;
   padding:10px 18px;
-  background: rgba(90,31,43,.96);
+
+  background: rgba(80,27,33,.96);
   border-bottom: 1px solid rgba(255,255,255,.18);
 }
 .mobile-nav a{
   display:block;
   padding:10px 0;
-  color: rgba(255,255,255,.80);
+  color: rgba(255,255,255,.86);
 }
 .mobile-nav a:hover{ color:#fff; }
 
 /* =========================================================
-   SECTIONS
+   SECTIONS (CREAM CONTENT BLOCKS)
    ========================================================= */
 .section{
   padding:88px 0;
-  background: var(--cream);     /* ✅ Sections stay cream */
+  background: var(--cream);
 }
 
 .section.alt{
@@ -126,27 +129,29 @@ a{ color:inherit; text-decoration:none; }
 }
 
 /* =========================================================
-   HERO VIDEO (NO BOX — FLOATING TEXT)
+   HERO VIDEO (SEAMLESS + FLOATING TEXT, NO BOX)
    HTML expectation:
-   <section class="hero" ...>
-     <video class="hero-video" ...></video>
+   <section class="section hero">
+     <video class="hero-video"...></video>
      <div class="hero-overlay"></div>
      <div class="hero-content">...</div>
    </section>
    ========================================================= */
 .hero{
-  padding-top: 90px; /* space for floating nav */
+  /* ✅ space so hero text doesn't sit under fixed nav */
+  padding-top: 90px;
+
   position:relative;
   min-height:85vh;
   overflow:hidden;
+
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
 
-  /* ✅ so the hero edge blends into burgundy outside */
+  /* ✅ ensures hero blends into burgundy frame */
   background: var(--burgundy);
-   
 }
 
 .hero-video{
@@ -159,15 +164,15 @@ a{ color:inherit; text-decoration:none; }
   z-index:0;
 }
 
-/* ✅ “Transparent” wash over the video */
+/* ✅ wash overlay for readability (controls “video transparency”) */
 .hero-overlay{
   position:absolute;
   inset:0;
-  background: rgba(251,247,243,.45); /* adjust 0.35–0.60 */
+  background: rgba(251,247,243,.42); /* adjust 0.30–0.60 */
   z-index:1;
 }
 
-/* ✅ Floating text area */
+/* Floating text area */
 .hero-content{
   position:relative;
   z-index:2;
@@ -175,7 +180,7 @@ a{ color:inherit; text-decoration:none; }
   max-width: 980px;
 }
 
-/* Elegant floating typography like the example */
+/* Kicker */
 .hero-kicker{
   font-family:'Cormorant Garamond', serif;
   font-style: italic;
@@ -186,6 +191,7 @@ a{ color:inherit; text-decoration:none; }
   color: rgba(28,28,28,.85);
 }
 
+/* Main names */
 .hero-content h1{
   font-family:'Cormorant Garamond', serif;
   font-weight:500;
@@ -195,15 +201,31 @@ a{ color:inherit; text-decoration:none; }
   color: rgba(28,28,28,.92);
 }
 
-.hero-content p{
-  margin:8px 0;
-  font-size:16px;
-  color: rgba(28,28,28,.78);
+/* “We’re getting married” + Location in cursive */
+.hero-script{
+  font-family: 'Italianno', cursive;
+  font-size: 36px;        /* ⬆ bigger */
+  font-weight: 400;
+  letter-spacing: .06em;
+  margin: 10px 0;
+  color: rgba(28,28,28,.88);
 }
 
-/* subtle readability without a box */
+/* Date matches the elegant serif style like the names */
+.hero-date{
+  font-family:'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin: 14px 0 6px;
+  color: rgba(28,28,28,.92);
+}
+
+/* Subtle text shadow for readability without a box */
 .hero-content h1,
-.hero-content p,
+.hero-date,
+.hero-script,
 .hero-kicker{
   text-shadow: 0 10px 30px rgba(0,0,0,.10);
 }
@@ -222,14 +244,14 @@ a{ color:inherit; text-decoration:none; }
   padding:12px 18px;
   border-radius:999px;
   border:1px solid rgba(0,0,0,.12);
-  background: rgba(255,255,255,.72);
+  background: rgba(255,255,255,.78);
   font-weight:500;
 }
 
 .btn.primary{
   background: var(--burgundy);
   color: #fff;
-  border-color: rgba(255,255,255,.20);
+  border-color: rgba(255,255,255,.18);
 }
 
 /* =========================================================
@@ -288,7 +310,7 @@ p{ margin:8px 0; font-size:16px; }
 .footer{
   padding:40px 18px;
   text-align:center;
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.78);
   background: var(--burgundy);
 }
 
@@ -298,38 +320,10 @@ p{ margin:8px 0; font-size:16px; }
 @media (max-width: 860px){
   .nav-links{ display:none; }
   .nav-menu{ display:inline-block; }
-
   .grid.two{ grid-template-columns:1fr; }
 
   .hero-content h1{ font-size:48px; }
+  .hero-script{ font-size: 28px; }
+  .hero-date{ font-size: 24px; letter-spacing: .14em; }
   h2{ font-size:36px; }
-}
-
-/* Elegant cursive hero text (matching reference image) */
-.hero-script{
-  font-family: 'Italianno', cursive;
-  font-size: 32px;        /* ⬆ bigger */
-  font-weight: 400;
-  letter-spacing: .08em;
-  margin: 10px 0;
-  color: rgba(28,28,28,.85);
-  text-shadow: 0 6px 18px rgba(0,0,0,.18);
-}
-
-/* Slightly smaller on mobile */
-@media (max-width: 860px){
-  .hero-script{
-    font-size: 26px;
-  }
-}
-
-/* Date styled like the names */
-.hero-date{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  margin: 14px 0 6px;
-  color: rgba(28,28,28,.88);
 }
