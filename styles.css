@@ -379,3 +379,11 @@ p{ font-size:16px; }
   }
 }
 
+/* Reverse layout for specific rows */
+.story-row.reverse{
+  direction: rtl;
+}
+
+.story-row.reverse > *{
+  direction: ltr;
+}
