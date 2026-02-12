@@ -464,7 +464,7 @@ p{ font-size:16px; }
   padding: 120px 0;
   color: #fff;
 
-  background: url("assets/venue.png") center center / cover no-repeat;
+  background: url("assets/venue.PNG") center center / cover no-repeat;
 }
 
 /* Soft overlay so text is readable */
