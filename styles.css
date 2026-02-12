@@ -459,35 +459,43 @@ p{ font-size:16px; }
    WEDDING DETAILS — Venue Background
    ==================================== */
 
-#details{
+.details-section{
   position: relative;
   padding: 120px 0;
   color: #fff;
 
-  /* MUST match file name exactly */
+  /* IMPORTANT: must match file name EXACTLY */
   background: url("./assets/venue.PNG") center center / cover no-repeat;
 }
 
-/* Overlay for readability */
-#details::before{
+/* Overlay so text is readable */
+.details-section::before{
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.45); /* adjust darker/lighter */
+  background: rgba(0,0,0,.45);
   backdrop-filter: blur(2px);
   z-index: 0;
 }
 
 /* Keep content above overlay */
-#details .wrap{
+.details-section .wrap{
   position: relative;
   z-index: 1;
 }
 
+/* White heading */
+.details-section h2{
+  color: #fff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 /* Glass panels */
-#details .panel{
-  background: rgba(255,255,255,.88);
+.details-section .panel{
+  background: rgba(255,255,255,.9);
   color: #111;
+  backdrop-filter: blur(6px);
 }
 
 /* White section heading */
