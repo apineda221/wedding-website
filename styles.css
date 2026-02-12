@@ -409,14 +409,15 @@ p{ font-size:16px; }
   box-shadow: 0 20px 45px rgba(0,0,0,.10);
 }
 
-/* Video wrapper keeps perfect aspect ratio */
+/* Vertical YouTube Shorts container */
 .story-video{
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 360px;   /* controls how wide it appears */
+  aspect-ratio: 9 / 16;  /* vertical ratio */
   border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 20px 45px rgba(0,0,0,.10);
+  box-shadow: 0 20px 45px rgba(0,0,0,.15);
   background: #000;
 }
 
