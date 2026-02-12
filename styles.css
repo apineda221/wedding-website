@@ -491,11 +491,16 @@ p{ font-size:16px; }
   margin-bottom: 40px;
 }
 
-/* Glass panels */
+/* Glass Panels inside Wedding Details */
 .details-section .panel{
-  background: rgba(255,255,255,.9);
-  color: #111;
-  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.15); /* transparency level */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 20px 45px rgba(0,0,0,.25);
+
+  color: #fff;
 }
 
 /* White section heading */
