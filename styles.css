@@ -516,3 +516,9 @@ p{ font-size:16px; }
   text-align: center;
   margin-bottom: 40px;
 }
+
+/* FORCE venue background image */
+.section.details-section{
+  background: url("assets/venue.PNG") center center / cover no-repeat !important;
+}
+
