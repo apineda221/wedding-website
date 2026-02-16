@@ -557,3 +557,40 @@ p{ font-size:16px; }
     animation: none !important;
   }
 }
+
+/* =========================================
+   PREMIUM PAGE LOAD — Sections float in
+   (safe: no layout breaking, just opacity/transform)
+   ========================================= */
+
+@media (prefers-reduced-motion: no-preference){
+
+  /* Every section fades + floats up on first load */
+  .section{
+    opacity: 0;
+    transform: translateY(18px);
+    animation: pageFloatUp 0.95s cubic-bezier(.2,.75,.25,1) forwards;
+    will-change: transform, opacity;
+  }
+
+  /* Stagger timing (premium feel) */
+  #home{ animation-delay: .06s; }
+  #ourstory{ animation-delay: .18s; }
+  #details{ animation-delay: .30s; }
+  #bridalparty{ animation-delay: .42s; }
+  #rsvp{ animation-delay: .54s; }
+
+  @keyframes pageFloatUp{
+    0%   { opacity: 0; transform: translateY(18px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Accessibility: respects reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .section{
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
