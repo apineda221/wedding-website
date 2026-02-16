@@ -594,3 +594,38 @@ p{ font-size:16px; }
     animation: none !important;
   }
 }
+
+/* =========================================
+   SCROLL REVEAL (fade + float up)
+   ========================================= */
+
+/* Starting state (hidden) */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .75s cubic-bezier(.2,.75,.25,1),
+              transform .75s cubic-bezier(.2,.75,.25,1);
+  will-change: opacity, transform;
+}
+
+/* Visible state */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slight stagger support (optional) */
+.reveal[data-delay="1"] { transition-delay: .08s; }
+.reveal[data-delay="2"] { transition-delay: .16s; }
+.reveal[data-delay="3"] { transition-delay: .24s; }
+.reveal[data-delay="4"] { transition-delay: .32s; }
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
