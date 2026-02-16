@@ -629,3 +629,156 @@ p{ font-size:16px; }
   }
 }
 
+/* ====================================
+   BRIDAL PARTY — layout from sketch
+   ==================================== */
+
+.bp-top{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.bp-card{
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bp-bride{
+  grid-template-columns: 1fr 170px; /* text then photo (right) */
+}
+
+.bp-photo{
+  width: 170px;
+  aspect-ratio: 3 / 4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(0,0,0,.06);
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+.bp-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bp-role{
+  margin: 0 0 6px;
+  font-size: 13px;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
+.bp-name{
+  margin: 0 0 8px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.bp-note{
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Bottom two columns */
+.bp-bottom{
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.bp-col{
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bp-col-title{
+  margin: 0 0 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Person rows */
+.bp-person{
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 0;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+.bp-person:first-of-type{
+  border-top: none;
+  padding-top: 0;
+}
+
+.bp-person-right{
+  grid-template-columns: 1fr 84px; /* text then pic on right */
+}
+
+.bp-person-photo{
+  width: 84px;
+  height: 104px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,.06);
+  border: 1px solid rgba(0,0,0,.10);
+}
+
+.bp-person-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.bp-person-name{
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.bp-person-note{
+  line-height: 1.45;
+}
+
+/* Mobile stack */
+@media (max-width: 860px){
+  .bp-top,
+  .bp-bottom{
+    grid-template-columns: 1fr;
+  }
+
+  .bp-card{
+    grid-template-columns: 120px 1fr;
+  }
+
+  .bp-bride{
+    grid-template-columns: 1fr 120px;
+  }
+
+  .bp-photo{
+    width: 120px;
+  }
+}
