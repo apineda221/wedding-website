@@ -782,3 +782,169 @@ p{ font-size:16px; }
     width: 120px;
   }
 }
+
+/* ====================================
+   BRIDAL PARTY — FORCE the sketch layout
+   Paste at the VERY BOTTOM of styles.css
+   ==================================== */
+
+#bridalparty .wrap { max-width: 980px; }
+
+/* TOP ROW: Groom card (left) + Bride card (right) */
+#bridalparty .bp-top{
+  margin-top: 28px !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 22px !important;
+  align-items: start !important;
+}
+
+/* Card container */
+#bridalparty .bp-card{
+  display: grid !important;
+  grid-template-columns: 170px 1fr !important;
+  gap: 18px !important;
+  align-items: start !important;
+
+  padding: 18px !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+
+  background: rgba(255,255,255,.78) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+/* Bride card: text left, photo right */
+#bridalparty .bp-bride{
+  grid-template-columns: 1fr 170px !important;
+}
+
+/* Photo blocks */
+#bridalparty .bp-photo{
+  width: 170px !important;
+  aspect-ratio: 3 / 4 !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  background: rgba(0,0,0,.06) !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+}
+
+#bridalparty .bp-photo img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+#bridalparty .bp-role{
+  margin: 0 0 6px !important;
+  font-size: 13px !important;
+  letter-spacing: .10em !important;
+  text-transform: uppercase !important;
+  opacity: .75 !important;
+}
+
+#bridalparty .bp-name{
+  margin: 0 0 8px !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+}
+
+#bridalparty .bp-note{
+  margin: 0 !important;
+  line-height: 1.6 !important;
+}
+
+/* BOTTOM ROW: Groomsmen column (left) + Bridesmaids column (right) */
+#bridalparty .bp-bottom{
+  margin-top: 22px !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 22px !important;
+  align-items: start !important;
+}
+
+#bridalparty .bp-col{
+  padding: 18px !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+  border: 1px solid rgba(0,0,0,.08) !important;
+  background: rgba(255,255,255,.78) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+#bridalparty .bp-col-title{
+  margin: 0 0 14px !important;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 26px !important;
+  font-weight: 600 !important;
+}
+
+/* Person rows */
+#bridalparty .bp-person{
+  display: grid !important;
+  grid-template-columns: 84px 1fr !important;
+  gap: 14px !important;
+  align-items: center !important;
+
+  padding: 12px 0 !important;
+  border-top: 1px solid rgba(0,0,0,.08) !important;
+}
+
+#bridalparty .bp-person:first-of-type{
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+#bridalparty .bp-person-right{
+  grid-template-columns: 1fr 84px !important;
+}
+
+#bridalparty .bp-person-photo{
+  width: 84px !important;
+  height: 104px !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: rgba(0,0,0,.06) !important;
+  border: 1px solid rgba(0,0,0,.10) !important;
+}
+
+#bridalparty .bp-person-photo img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+#bridalparty .bp-person-name{
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+}
+
+#bridalparty .bp-person-note{
+  line-height: 1.45 !important;
+}
+
+/* Mobile: stack */
+@media (max-width: 860px){
+  #bridalparty .bp-top,
+  #bridalparty .bp-bottom{
+    grid-template-columns: 1fr !important;
+  }
+
+  #bridalparty .bp-card{
+    grid-template-columns: 120px 1fr !important;
+  }
+
+  #bridalparty .bp-bride{
+    grid-template-columns: 1fr 120px !important;
+  }
+
+  #bridalparty .bp-photo{
+    width: 120px !important;
+  }
+}
