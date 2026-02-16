@@ -522,3 +522,38 @@ p{ font-size:16px; }
   background: url("assets/venue.PNG") center center / cover no-repeat !important;
 }
 
+/* =========================================
+   Page load: gentle float-up + fade-in
+   Safe: doesn't change layout, just animates
+   ========================================= */
+
+@media (prefers-reduced-motion: no-preference){
+  .section{
+    opacity: 0;
+    transform: translateY(18px);
+    animation: pageFloatUp .9s ease-out forwards;
+  }
+
+  /* Stagger so it feels premium */
+  #home{ animation-delay: .05s; }
+  #ourstory{ animation-delay: .18s; }
+  #details{ animation-delay: .31s; }
+  #bridalparty{ animation-delay: .44s; }
+  #rsvp{ animation-delay: .57s; }
+
+  @keyframes pageFloatUp{
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Respect accessibility settings */
+@media (prefers-reduced-motion: reduce){
+  .section{
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
