@@ -948,3 +948,83 @@ p{ font-size:16px; }
     width: 120px !important;
   }
 }
+
+/* ====================================
+   DETAILS — Icon Schedule (replaces bullets)
+   ==================================== */
+
+.details-section .schedule-panel{
+  background: rgba(255,255,255,.18);   /* glass */
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  border: 1px solid rgba(255,255,255,.25);
+  color: #fff;
+}
+
+.details-section .schedule-panel h3,
+.details-section .schedule-panel p,
+.details-section .schedule-panel .schedule-label,
+.details-section .schedule-panel .schedule-time{
+  color:#fff;
+}
+
+.schedule-title{
+  text-align:center;
+  margin: 0 0 8px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.schedule-subtitle{
+  text-align:center;
+  margin: 0 0 22px;
+  opacity: .9;
+}
+
+.schedule-icons{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  align-items:start;
+}
+
+.schedule-item{
+  text-align:center;
+}
+
+.schedule-item img{
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;               /* keeps them circular */
+  object-fit: cover;
+  display:block;
+  margin: 0 auto 10px;
+
+  /* subtle glow like the example */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.25));
+}
+
+.schedule-label{
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.schedule-time{
+  margin: 6px 0 0;
+  font-size: 12px;
+  opacity: .9;
+}
+
+/* Responsive: wrap nicely on mobile */
+@media (max-width: 860px){
+  .schedule-icons{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .schedule-item img{
+    width: 68px;
+    height: 68px;
+  }
+}
