@@ -1217,3 +1217,26 @@ p{ font-size:16px; }
     height: 110px;
   }
 }
+
+/* ==============================
+   DETAILS — fix top cards layout
+   ============================== */
+.details-grid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+  align-items: start;
+  margin-top: 26px;
+}
+
+.details-card{
+  width: 100%;
+  max-width: none; /* prevents skinny card */
+}
+
+/* Mobile stack */
+@media (max-width: 900px){
+  .details-grid{
+    grid-template-columns: 1fr;
+  }
+}
