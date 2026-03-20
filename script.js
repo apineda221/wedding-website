@@ -142,3 +142,75 @@ document.addEventListener("keydown", (event) => {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 })();
+
+// ===============================
+// Background Music + YouTube Sync
+// ===============================
+(() => {
+  const bgMusic = document.getElementById("bgMusic");
+  const musicToggle = document.getElementById("musicToggle");
+
+  if (!bgMusic || !musicToggle) return;
+
+  let userStartedMusic = false;
+  let wasPlayingBeforeVideo = false;
+
+  bgMusic.volume = 0.18; // soft volume
+
+  async function playMusic() {
+    try {
+      await bgMusic.play();
+      userStartedMusic = true;
+      musicToggle.textContent = "Music On";
+      musicToggle.setAttribute("aria-pressed", "true");
+    } catch (err) {
+      console.warn("Music play was blocked:", err);
+    }
+  }
+
+  function pauseMusic() {
+    bgMusic.pause();
+    musicToggle.textContent = "Music Off";
+    musicToggle.setAttribute("aria-pressed", "false");
+  }
+
+  musicToggle.addEventListener("click", async () => {
+    if (bgMusic.paused) {
+      await playMusic();
+    } else {
+      pauseMusic();
+    }
+  });
+
+  // Load YouTube Iframe API
+  const tag = document.createElement("script");
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+
+  let player;
+
+  window.onYouTubeIframeAPIReady = function () {
+    const iframe = document.getElementById("proposalVideo");
+    if (!iframe) return;
+
+    player = new YT.Player("proposalVideo", {
+      events: {
+        onStateChange: function (event) {
+          // YT.PlayerState.PLAYING = 1
+          if (event.data === 1) {
+            wasPlayingBeforeVideo = !bgMusic.paused;
+            pauseMusic();
+          }
+
+          // YT.PlayerState.PAUSED = 2
+          // YT.PlayerState.ENDED = 0
+          if ((event.data === 2 || event.data === 0) && userStartedMusic && wasPlayingBeforeVideo) {
+            // optional auto-resume
+            playMusic();
+            wasPlayingBeforeVideo = false;
+          }
+        }
+      }
+    });
+  };
+})();
