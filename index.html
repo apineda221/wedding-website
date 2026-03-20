@@ -4,11 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Abelardo & Keren</title>
+  <meta name="theme-color" content="#501b21" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Italianno&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- CSS (IMPORTANT: include ./ ) -->
+  <!-- CSS -->
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
@@ -16,9 +22,9 @@
 
   <!-- Top Navigation -->
   <header class="nav">
-    <a class="brand" href="#home">A & K</a>
+    <a class="brand" href="#home">A &amp; K</a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="#home">Home</a>
       <a href="#ourstory">Our Story</a>
       <a href="#details">Details</a>
@@ -27,17 +33,27 @@
       <a class="nav-cta" href="#rsvp">RSVP</a>
     </nav>
 
-    <button class="nav-menu" id="menuBtn" aria-label="Open menu" type="button">Menu</button>
+    <button
+      class="nav-menu"
+      id="menuBtn"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobileNav"
+      type="button"
+    >
+      Menu
+    </button>
   </header>
 
   <!-- Mobile Menu -->
-  <div class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
     <a href="#home">Home</a>
     <a href="#ourstory">Our Story</a>
     <a href="#details">Details</a>
+    <a href="#faq">FAQ</a>
     <a href="#bridalparty">Bridal Party</a>
     <a href="#rsvp">RSVP</a>
-  </div>
+  </nav>
 
   <!-- HOME -->
   <section id="home" class="section hero">
@@ -61,201 +77,197 @@
     </div>
   </section>
 
- <!-- OUR STORY -->
-<section id="ourstory" class="section">
-  <div class="wrap">
-    <h2>The Journey to "YES"</h2>
+  <!-- OUR STORY -->
+  <section id="ourstory" class="section">
+    <div class="wrap">
+      <h2>The Journey to “YES”</h2>
 
-    <!-- ROW 1: Image (left) + How We Met (right) -->
-    <div class="story-row">
-      <div class="story-media">
-        <img class="story-img" src="assets/our-story-1.heic" alt="Abelardo and Keren" />
-      </div>
-
-      <div class="story-text">
-        <p class="story-kicker">How it all started</p>
-        <h3 class="story-script-title">How We Met</h3>
-        <p class="muted">
-          From simple moments to forever. Sometimes the best things in life come when you’re not looking for them. What began as a simple connection quietly grew into something neither of them could imagine living without.
-          <br><br>
-          They met at work and, without even realizing it, began choosing each other more and more. Hanging out became a daily thing — inventing plans, laughing endlessly, and spending long afternoons at Keren’s parents’ home. It was there that they discovered how effortlessly they connected, bonding over board games, LEGOs, and the simple joy of being together.
-          <br><br>
-          Their first official date took them to New Orleans for a Matt Rife comedy show. They spent hours walking through Bourbon Street, talking about everything and nothing at all. When they were together, the world seemed to fade away — just the two of them, fully present and completely understood.
-        </p>
-      </div>
-    </div>
-
-    <!-- ROW 2: Proposal (text left, video right) -->
-    <div class="story-row proposal-row">
-      <!-- TEXT (LEFT) -->
-      <div class="story-text">
-        <p class="story-kicker">He asked, she said yes</p>
-        <h3 class="story-script-title">The Proposal</h3>
-        <p class="muted">
-          Now, for someone who can never be kept out of a secret, Keren was completely surprised.
-          <br><br>
-          What seemed like a normal day hanging out with her best friend turned into something unforgettable...
-        </p>
-      </div>
-
-      <!-- VIDEO (RIGHT) -->
-      <div class="story-video">
-  <iframe
-    src="https://www.youtube.com/embed/_RX36_ZnRD8"
-    title="Proposal Video"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
-</div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- DETAILS -->
-<section id="details" class="section details-section">
-  <div class="wrap">
-    <h2>Wedding Details</h2>
-
-    <!-- TOP ROW: Ceremony + Reception -->
-    <div class="grid two details-grid">
-      <div class="panel details-card">
-        <h3>Ceremony</h3>
-        <ul class="list">
-          <li><strong>Venue:</strong> Holy Ghost Catholic Church</li>
-          <li><strong>Address:</strong> 600 N Oak St, Hammond, LA 70401</li>
-          <li><strong>Time:</strong> 5:00 PM</li>
-          <li><strong>Dress Code:</strong> Formal Attire</li>
-        </ul>
-        <a class="link" href="https://maps.app.goo.gl/ztVKjfEwdMP8MWaK8" target="_blank" rel="noopener">
-          Open in Maps →
-        </a>
-      </div>
-
-      <div class="panel details-card">
-        <h3>Reception</h3>
-        <ul class="list">
-          <li><strong>Venue:</strong> Strawberry Manor</li>
-          <li><strong>Address:</strong> 1690 Veterans Ave, Ponchatoula, LA 70454</li>
-          <li><strong>Time:</strong> 7:00 PM</li>
-          <li><strong>Dress Code:</strong> Formal Attire</li>
-        </ul>
-        <a class="link" href="https://maps.app.goo.gl/sy9ap9f9b3Ud633t6" target="_blank" rel="noopener">
-          Open in Maps →
-        </a>
-      </div>
-    </div>
-
-    <!-- BOTTOM ROW: Wedding Day timeline (full width) -->
-    <div class="panel schedule-panel full-width">
-      <h3 class="schedule-title">THE WEDDING DAY</h3>
-      <p class="schedule-subtitle">Our special day begins in the church — meet there at 5:00 PM</p>
-
-      <div class="schedule-icons">
-        <div class="schedule-item">
-          <img src="assets/Ceremony_1.png" alt="Ceremony" />
-          <p class="schedule-label">We Say I Do</p>
-          <p class="schedule-time">5:00 PM</p>
+      <!-- Row 1 -->
+      <div class="story-row">
+        <div class="story-media">
+          <img class="story-img" src="assets/our-story-1.heic" alt="Abelardo and Keren" />
         </div>
 
-        <div class="schedule-item">
-          <img src="assets/Reception_1.png" alt="Reception" />
-          <p class="schedule-label">Let the Party Begin!</p>
-          <p class="schedule-time">7:00 PM</p>
+        <div class="story-text">
+          <p class="story-kicker">How it all started</p>
+          <h3 class="story-script-title">How We Met</h3>
+          <p class="muted">
+            From simple moments to forever. Sometimes the best things in life come when you’re not looking for them.
+            What began as a simple connection quietly grew into something neither of them could imagine living without.
+            <br /><br />
+            They met at work and, without even realizing it, began choosing each other more and more. Hanging out became
+            a daily thing — inventing plans, laughing endlessly, and spending long afternoons at Keren’s parents’ home.
+            It was there that they discovered how effortlessly they connected, bonding over board games, LEGOs, and the
+            simple joy of being together.
+            <br /><br />
+            Their first official date took them to New Orleans for a Matt Rife comedy show. They spent hours walking
+            through Bourbon Street, talking about everything and nothing at all. When they were together, the world
+            seemed to fade away — just the two of them, fully present and completely understood.
+          </p>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="story-row proposal-row">
+        <div class="story-text">
+          <p class="story-kicker">He asked, she said yes</p>
+          <h3 class="story-script-title">The Proposal</h3>
+          <p class="muted">
+            Now, for someone who can never be kept out of a secret, Keren was completely surprised.
+            <br /><br />
+            What seemed like a normal day hanging out with her best friend turned into something unforgettable...
+          </p>
         </div>
 
-        <div class="schedule-item">
-          <img src="assets/Toast_1.png" alt="Toast" />
-          <p class="schedule-label">Welcome Toast</p>
-          <p class="schedule-time">8:00 PM</p>
-        </div>
-
-        <div class="schedule-item">
-          <img src="assets/Cake_1.png" alt="Cake" />
-          <p class="schedule-label">Cake Cutting!</p>
-          <p class="schedule-time">8:30 PM</p>
-        </div>
-
-        <div class="schedule-item">
-          <img src="assets/Sendoff_1.png" alt="Sendoff" />
-          <p class="schedule-label">Goodnight!</p>
-          <p class="schedule-time">10:30 PM</p>
+        <div class="story-video">
+          <iframe
+            src="https://www.youtube.com/embed/_RX36_ZnRD8"
+            title="Proposal Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- DETAILS -->
+  <section id="details" class="section details-section">
+    <div class="wrap">
+      <h2>Wedding Details</h2>
+
+      <div class="grid two details-grid">
+        <div class="panel details-card">
+          <h3>Ceremony</h3>
+          <ul class="list">
+            <li><strong>Venue:</strong> Holy Ghost Catholic Church</li>
+            <li><strong>Address:</strong> 600 N Oak St, Hammond, LA 70401</li>
+            <li><strong>Time:</strong> 5:00 PM</li>
+            <li><strong>Dress Code:</strong> Formal Attire</li>
+          </ul>
+          <a class="link" href="https://maps.app.goo.gl/ztVKjfEwdMP8MWaK8" target="_blank" rel="noopener">
+            Open in Maps →
+          </a>
+        </div>
+
+        <div class="panel details-card">
+          <h3>Reception</h3>
+          <ul class="list">
+            <li><strong>Venue:</strong> Strawberry Manor</li>
+            <li><strong>Address:</strong> 1690 Veterans Ave, Ponchatoula, LA 70454</li>
+            <li><strong>Time:</strong> 7:00 PM</li>
+            <li><strong>Dress Code:</strong> Formal Attire</li>
+          </ul>
+          <a class="link" href="https://maps.app.goo.gl/sy9ap9f9b3Ud633t6" target="_blank" rel="noopener">
+            Open in Maps →
+          </a>
+        </div>
+      </div>
+
+      <div class="panel schedule-panel full-width">
+        <h3 class="schedule-title">The Wedding Day</h3>
+        <p class="schedule-subtitle">Our special day begins in the church — meet there at 5:00 PM</p>
+
+        <div class="schedule-icons">
+          <div class="schedule-item">
+            <img src="assets/Ceremony_1.png" alt="Ceremony" />
+            <p class="schedule-label">We Say I Do</p>
+            <p class="schedule-time">5:00 PM</p>
+          </div>
+
+          <div class="schedule-item">
+            <img src="assets/Reception_1.png" alt="Reception" />
+            <p class="schedule-label">Let the Party Begin!</p>
+            <p class="schedule-time">7:00 PM</p>
+          </div>
+
+          <div class="schedule-item">
+            <img src="assets/Toast_1.png" alt="Toast" />
+            <p class="schedule-label">Welcome Toast</p>
+            <p class="schedule-time">8:00 PM</p>
+          </div>
+
+          <div class="schedule-item">
+            <img src="assets/Cake_1.png" alt="Cake" />
+            <p class="schedule-label">Cake Cutting!</p>
+            <p class="schedule-time">8:30 PM</p>
+          </div>
+
+          <div class="schedule-item">
+            <img src="assets/Sendoff_1.png" alt="Sendoff" />
+            <p class="schedule-label">Goodnight!</p>
+            <p class="schedule-time">10:30 PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FAQ -->
-<section id="faq" class="section faq-section">
-  <div class="wrap">
-    <h2>FAQ</h2>
+  <section id="faq" class="section faq-section">
+    <div class="wrap">
+      <h2>FAQ</h2>
 
-    <div class="faq-list">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+            <span>What is the Dress Code?</span>
+            <span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1">
+            Our wedding attire is formal / elegant. We encourage guests to dress in their best attire to celebrate
+            this special day with us. We kindly ask guests to avoid wearing white, burgundy, or red, as these colors
+            are part of our wedding palette. Think romantic, elegant, and ready to celebrate with us!
+          </div>
+        </div>
 
-      <div class="faq-item">
-        <button class="faq-question">
-          What is the Dress Code?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          Our wedding attire is formal / elegant. We encourage guests to dress in their best attire to celebrate this special day with us. 
-          We kindly ask guests to avoid wearing white, burgundy, or red, as these colors are part of our wedding palette. 
-          Think romantic, elegant, and ready to celebrate with us!
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+            <span>Can I Bring a Plus-One?</span>
+            <span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2">
+            Due to space limitations, only guests listed on the invitation are able to attend. If a plus-one has been
+            reserved for you, it will be indicated on your invitation. Thank you for understanding!
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+            <span>Can I Take Photos/Videos During the Ceremony?</span>
+            <span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3">
+            Yes! Guests are welcome to take photos. We simply ask that everyone remains seated and avoids stepping
+            into the aisle or in front of the photographers, so they can capture our special moments.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+            <span>Are Children Welcomed?</span>
+            <span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4">
+            Of course—we love the little ones! We simply ask parents to help keep the church ceremony quiet and ensure
+            children remain seated during special moments so everyone can enjoy the ceremony and our photographers can
+            capture the memories.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+            <span>When Should I RSVP By?</span>
+            <span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5">
+            Please RSVP by July 31st, 2026, so we can finalize seating and arrangements with our vendors. We truly
+            appreciate your timely response.
+          </div>
         </div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          Can I Bring a Plus-One?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          Due to space limitations, only guests listed on the invitation are able to attend. If a plus-one has been reserved for you, 
-          it will be indicated on your invitation. Thank you for understanding!
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          Can I Take Photos/Videos During the Ceremony?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          Yes! Guests are welcome to take photos. We simply ask that everyone remains seated and avoids 
-          stepping into the aisle or in front of the photographers, so they can capture our special moments.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          Are Children Welcomed?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          Of course—we love the little ones! We simply ask parents to help keep the church ceremony quiet and ensure 
-          children remain seated during special moments so everyone can enjoy the ceremony and our photographers can capture the memories.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          When Should I RSVP By?
-          <span>+</span>
-        </button>
-        <div class="faq-answer">
-          Please RSVP by July 31st 2026, so we can finalize seating and arrangements with our vendors. 
-          We truly appreciate your timely response.
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- RSVP -->
   <section id="rsvp" class="section alt">
@@ -274,7 +286,7 @@
     <p class="tiny muted">Made with love — Abelardo &amp; Keren</p>
   </footer>
 
-  <!-- JS (IMPORTANT: include ./ ) -->
-  <script src="./script.js"></script>
+  <!-- JS -->
+  <script src="./script.js" defer></script>
 </body>
 </html>
