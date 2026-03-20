@@ -263,7 +263,7 @@ p{
   justify-content: center;
   overflow: hidden;
 
-  min-height: 85vh;
+  min-height: 92vh;
   padding-top: 90px;
   text-align: center;
   background: var(--burgundy);
@@ -834,16 +834,61 @@ p{
     grid-template-columns: 1fr;
   }
 
+  /* HERO — stronger mobile presence */
+  .hero{
+    min-height: 100svh;
+    padding-top: 110px;
+    padding-bottom: 70px;
+    align-items: flex-start;
+  }
+
+  .hero-overlay{
+    background: rgba(251, 247, 243, 0.38);
+  }
+
+  .hero-content{
+    width: 100%;
+    max-width: 100%;
+    padding: 110px 24px 40px;
+  }
+
+  .hero-kicker{
+    font-size: 18px;
+    margin-bottom: 24px;
+    letter-spacing: 0.06em;
+  }
+
   .hero-content h1{
-    font-size: 48px;
+    font-size: clamp(64px, 18vw, 96px);
+    line-height: 0.95;
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
   }
 
   .hero-script{
-    font-size: 26px;
+    font-size: clamp(36px, 10vw, 54px);
+    margin: 10px 0;
+    line-height: 1;
   }
 
   .hero-date{
-    font-size: 22px;
+    font-size: clamp(24px, 6vw, 34px);
+    letter-spacing: 0.16em;
+    margin: 22px 0 10px;
+  }
+
+  .hero-content p{
+    font-size: 18px;
+  }
+
+  .hero-actions{
+    margin-top: 30px;
+    gap: 14px;
+  }
+
+  .hero-actions .btn{
+    padding: 14px 24px;
+    font-size: 18px;
   }
 
   .story-row{
