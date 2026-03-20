@@ -1018,7 +1018,8 @@ filter: blur(30px);
 .countdown-bg{
   position: absolute;
   inset: 0;
-  background: url("./assets/countdown.heic") center center / cover no-repeat;
+  background: url("./assets/countdown.heic") center center / contain no-repeat;
+  background-color: #2b0e13;
   z-index: 0;
 }
 
