@@ -1018,8 +1018,7 @@ filter: blur(30px);
 .countdown-bg{
   position: absolute;
   inset: 0;
-  background: url("./assets/countdown.heic") center center / contain no-repeat;
-  background-color: #2b0e13;
+  background: url("./assets/countdown.heic") center 28% / cover no-repeat;
   z-index: 0;
 }
 
@@ -1030,8 +1029,8 @@ filter: blur(30px);
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(to right, rgba(0,0,0,.22), rgba(0,0,0,.08)),
-    rgba(32, 10, 14, 0.24);
+    linear-gradient(to left, rgba(43,14,19,0.8), transparent 40%),
+    linear-gradient(to right, rgba(43,14,19,0.8), transparent 40%);
 }
 
 /* Content sits above image */
