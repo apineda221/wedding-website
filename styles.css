@@ -1173,3 +1173,39 @@ filter: blur(30px);
     text-align: center;
   }
 }
+
+/* =========================
+   MUSIC TOGGLE
+   ========================= */
+.music-toggle{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 120;
+
+  padding: 12px 18px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px;
+  background: rgba(80, 27, 33, 0.78);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.music-toggle:hover{
+  background: rgba(80, 27, 33, 0.92);
+}
+
+@media (max-width: 860px){
+  .music-toggle{
+    right: 14px;
+    bottom: 14px;
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+}
