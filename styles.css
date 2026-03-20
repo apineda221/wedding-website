@@ -807,6 +807,230 @@ p{
 }
 
 /* =========================
+   ENGAGEMENT EDITORIAL SECTION
+   ========================= */
+.engagement-section{
+  position: relative;
+  overflow: hidden;
+  padding: 130px 0;
+  background: #f6f1ec;
+}
+
+.engagement-section::before{
+  content: "";
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(80,27,33,.08) 0%, rgba(80,27,33,0) 70%);
+  pointer-events: none;
+}
+
+.engagement-section::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(80,27,33,.07) 0%, rgba(80,27,33,0) 70%);
+  pointer-events: none;
+}
+
+.engagement-wrap{
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: center;
+  max-width: 1240px;
+}
+
+/* Left side */
+.engagement-copy{
+  position: relative;
+  z-index: 2;
+}
+
+.engagement-eyebrow{
+  margin: 0 0 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(28,28,28,.76);
+}
+
+.engagement-title{
+  margin: 0 0 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 6vw, 104px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -0.03em;
+  color: var(--burgundy);
+}
+
+.engagement-text{
+  max-width: 620px;
+  margin: 0;
+  font-size: clamp(21px, 1.8vw, 31px);
+  line-height: 1.5;
+  color: #2a2523;
+}
+
+.engagement-actions{
+  margin-top: 36px;
+}
+
+/* Right side gallery */
+.engagement-gallery{
+  position: relative;
+  min-height: 780px;
+}
+
+.engagement-photo{
+  position: absolute;
+  overflow: hidden;
+  background: #ddd;
+  box-shadow: 0 24px 60px rgba(0,0,0,.16);
+}
+
+.engagement-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.engagement-photo-main{
+  top: 0;
+  right: 0;
+  width: min(100%, 520px);
+  height: 640px;
+  border-radius: 0;
+}
+
+.engagement-photo-accent{
+  left: -40px;
+  bottom: 0;
+  width: 290px;
+  height: 380px;
+  border: 12px solid #f6f1ec;
+  border-radius: 0;
+  z-index: 2;
+}
+
+.engagement-badge{
+  position: absolute;
+  right: 28px;
+  bottom: 38px;
+  z-index: 3;
+
+  padding: 18px 24px;
+  background: rgba(80,27,33,.92);
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  line-height: 1.05;
+  text-align: center;
+  letter-spacing: .03em;
+  box-shadow: 0 18px 35px rgba(0,0,0,.18);
+}
+
+/* Make button feel richer in this section */
+.engagement-section .btn.primary{
+  padding: 16px 28px;
+  font-size: 15px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   ENGAGEMENT MOBILE
+   ========================= */
+@media (max-width: 1100px){
+  .engagement-wrap{
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .engagement-gallery{
+    min-height: 760px;
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .engagement-photo-main{
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+
+  .engagement-photo-accent{
+    left: 20px;
+  }
+}
+
+@media (max-width: 860px){
+  .engagement-section{
+    padding: 95px 0;
+  }
+
+  .engagement-eyebrow{
+    font-size: 16px;
+    letter-spacing: 0.18em;
+    margin-bottom: 16px;
+  }
+
+  .engagement-title{
+    font-size: clamp(52px, 14vw, 76px);
+    line-height: .94;
+    margin-bottom: 22px;
+  }
+
+  .engagement-text{
+    font-size: clamp(19px, 5.2vw, 24px);
+    line-height: 1.55;
+  }
+
+  .engagement-actions{
+    margin-top: 28px;
+  }
+
+  .engagement-actions .btn{
+    width: 100%;
+    text-align: center;
+  }
+
+  .engagement-gallery{
+    min-height: 620px;
+  }
+
+  .engagement-photo-main{
+    width: 100%;
+    max-width: 100%;
+    height: 470px;
+  }
+
+  .engagement-photo-accent{
+    left: 14px;
+    bottom: 10px;
+    width: 180px;
+    height: 230px;
+    border-width: 8px;
+  }
+
+  .engagement-badge{
+    right: 14px;
+    bottom: 24px;
+    padding: 14px 16px;
+    font-size: 22px;
+  }
+}
+
+/* =========================
    RESPONSIVE
    ========================= */
 @media (max-width: 1100px){
