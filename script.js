@@ -116,3 +116,44 @@ faqButtons.forEach((button) => {
     button.setAttribute("aria-expanded", String(isActive));
   });
 });
+
+// ===============================
+// Wedding Countdown Timer
+// ===============================
+(() => {
+  const daysEl = document.getElementById("days");
+  const hoursEl = document.getElementById("hours");
+  const minutesEl = document.getElementById("minutes");
+  const secondsEl = document.getElementById("seconds");
+
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+  // Wedding date: November 27, 2026
+  const targetDate = new Date("2026-11-27T00:00:00");
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      daysEl.textContent = "0";
+      hoursEl.textContent = "00";
+      minutesEl.textContent = "00";
+      secondsEl.textContent = "00";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    daysEl.textContent = String(days);
+    hoursEl.textContent = String(hours).padStart(2, "0");
+    minutesEl.textContent = String(minutes).padStart(2, "0");
+    secondsEl.textContent = String(seconds).padStart(2, "0");
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
