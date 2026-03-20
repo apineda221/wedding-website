@@ -306,7 +306,7 @@ p{
 .hero-content h1{
   margin-bottom: 12px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(48px, 7vw, 90px);
+  font-size: clamp(90px, 7vw, 130px);
   font-weight: 500;
   line-height: 1.02;
   color: rgba(28, 28, 28, 0.92);
