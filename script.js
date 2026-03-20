@@ -103,21 +103,6 @@ document.addEventListener("keydown", (event) => {
 })();
 
 // ===============================
-// FAQ Toggle
-// ===============================
-const faqButtons = document.querySelectorAll(".faq-question");
-
-faqButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const item = button.closest(".faq-item");
-    if (!item) return;
-
-    const isActive = item.classList.toggle("active");
-    button.setAttribute("aria-expanded", String(isActive));
-  });
-});
-
-// ===============================
 // Wedding Countdown Timer
 // ===============================
 (() => {
