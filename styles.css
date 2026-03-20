@@ -932,9 +932,9 @@ p{
 
 /* Special version for dark / image-backed sections like Wedding Details */
 .details-section.soft-transition::before{
-  top: -90px;
-  height: 140px;
-  z-index: 1;
+  top: -110px;
+height: 170px;
+filter: blur(30px);
 
   background: linear-gradient(
     to bottom,
