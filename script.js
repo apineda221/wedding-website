@@ -4,27 +4,61 @@
 const menuBtn = document.getElementById("menuBtn");
 const mobileNav = document.getElementById("mobileNav");
 
-menuBtn?.addEventListener("click", () => {
-  const isOpen = mobileNav.style.display === "block";
-  mobileNav.style.display = isOpen ? "none" : "block";
-});
+function openMobileMenu() {
+  mobileNav?.classList.add("open");
+  mobileNav?.removeAttribute("hidden");
+  menuBtn?.setAttribute("aria-expanded", "true");
+}
+
+function closeMobileMenu() {
+  mobileNav?.classList.remove("open");
+  mobileNav?.setAttribute("hidden", "");
+  menuBtn?.setAttribute("aria-expanded", "false");
+}
+
+function toggleMobileMenu() {
+  if (!mobileNav) return;
+  const isOpen = mobileNav.classList.contains("open");
+  if (isOpen) {
+    closeMobileMenu();
+  } else {
+    openMobileMenu();
+  }
+}
+
+menuBtn?.addEventListener("click", toggleMobileMenu);
 
 // Close menu when a link is clicked
-mobileNav?.querySelectorAll("a").forEach(a => {
-  a.addEventListener("click", () => {
-    mobileNav.style.display = "none";
-  });
+mobileNav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
 });
 
+// Close menu if clicking outside
+document.addEventListener("click", (event) => {
+  if (!mobileNav || !menuBtn) return;
+
+  const clickedInsideNav = mobileNav.contains(event.target);
+  const clickedMenuBtn = menuBtn.contains(event.target);
+
+  if (!clickedInsideNav && !clickedMenuBtn) {
+    closeMobileMenu();
+  }
+});
+
+// Close menu on Escape
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMobileMenu();
+  }
+});
 
 // ===============================
-// Scroll Reveal (fade + float up on scroll)
+// Scroll Reveal
 // ===============================
-(function () {
+(() => {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReduced) return;
 
-  // Elements to animate as they enter the viewport
   const targets = document.querySelectorAll(`
     .section,
     .panel,
@@ -35,7 +69,6 @@ mobileNav?.querySelectorAll("a").forEach(a => {
     .hero-content
   `);
 
-  // Add reveal class + gentle stagger per section
   const bySection = new Map();
 
   targets.forEach((el) => {
@@ -46,18 +79,18 @@ mobileNav?.querySelectorAll("a").forEach(a => {
     bySection.get(section).push(el);
   });
 
-  // Apply small stagger delays (first 4 items per section)
-  bySection.forEach((els) => {
-    els.slice(0, 4).forEach((el, i) => el.setAttribute("data-delay", String(i + 1)));
+  bySection.forEach((elements) => {
+    elements.slice(0, 4).forEach((el, index) => {
+      el.setAttribute("data-delay", String(index + 1));
+    });
   });
 
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target); // animate once
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target);
       });
     },
     {
@@ -69,11 +102,17 @@ mobileNav?.querySelectorAll("a").forEach(a => {
   document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 })();
 
+// ===============================
 // FAQ Toggle
-document.querySelectorAll(".faq-question").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const item = btn.parentElement;
+// ===============================
+const faqButtons = document.querySelectorAll(".faq-question");
 
-    item.classList.toggle("active");
+faqButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const item = button.closest(".faq-item");
+    if (!item) return;
+
+    const isActive = item.classList.toggle("active");
+    button.setAttribute("aria-expanded", String(isActive));
   });
 });
