@@ -1680,3 +1680,14 @@ filter: blur(30px);
     font-size: 13px;
   }
 }
+
+.ourstory-block-proposal.only-proposal{
+  grid-template-columns: minmax(0, 1fr) minmax(0, 390px);
+  max-width: 980px;
+}
+
+@media (max-width: 980px){
+  .ourstory-block-proposal.only-proposal{
+    grid-template-columns: 1fr;
+  }
+}
