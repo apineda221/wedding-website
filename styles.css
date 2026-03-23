@@ -1693,156 +1693,37 @@ filter: blur(30px);
 }
 
 /* =========================
-   OUR FAMILIA GALLERY — LUXURY COLLAGE
+   OUR FAMILIA GALLERY — EDITORIAL COLLAGE
    ========================= */
 .familia-section{
   position: relative;
   overflow: hidden;
-  padding: 120px 0 110px;
+  padding: 110px 0 90px;
   background:
-    radial-gradient(circle at top, rgba(112,22,31,.05), transparent 35%),
-    linear-gradient(rgba(251,247,243,.95), rgba(251,247,243,.95));
+    radial-gradient(circle at center, rgba(173, 110, 110, 0.08), transparent 38%),
+    linear-gradient(rgba(251,247,243,.97), rgba(251,247,243,.97));
   background-color: #fbf7f3;
 }
 
-/* large floral corner art */
-.familia-section::before,
-.familia-section::after{
-  content: "";
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  pointer-events: none;
-  opacity: .95;
-  z-index: 0;
-}
-
-.familia-section::before{
-  top: 0;
-  left: 0;
-  background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' fill='none'>\
-<g stroke='%2370161f' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'>\
-<circle cx='92' cy='92' r='48'/><circle cx='92' cy='92' r='30'/><circle cx='92' cy='92' r='14'/>\
-<circle cx='170' cy='62' r='34'/><circle cx='170' cy='62' r='21'/><circle cx='170' cy='62' r='10'/>\
-<circle cx='72' cy='176' r='30'/><circle cx='72' cy='176' r='18'/><circle cx='72' cy='176' r='8'/>\
-<circle cx='220' cy='120' r='54'/><circle cx='220' cy='120' r='34'/><circle cx='220' cy='120' r='16'/>\
-<path d='M18 138c31-21 59-65 49-118'/>\
-<path d='M17 138c47 5 102-9 144-37'/>\
-<path d='M146 103c-21-6-49 1-66 18'/>\
-<path d='M116 28c19 19 25 49 14 73'/>\
-<path d='M22 243c32-22 63-24 91-6'/>\
-<path d='M45 214c-2 31 13 59 39 76'/>\
-<path d='M168 220c18-16 43-25 67-24'/>\
-<path d='M201 181c7 23 24 43 46 56'/>\
-<path d='M261 40c29 26 38 68 21 103'/>\
-<path d='M283 143c33-19 51-55 44-95'/>\
-<path d='M273 144c-31-16-67-18-98-6'/>\
-<path d='M305 208c25 19 35 46 29 75'/>\
-<path d='M281 224c30 4 56 21 71 46'/>\
-<path d='M247 241c24 5 46 20 61 40'/>\
-<path d='M86 232c13-11 31-15 47-8'/>\
-<path d='M210 261c13-12 33-15 50-6'/>\
-</g></svg>");
-}
-
-.familia-section::after{
-  right: 0;
-  bottom: 0;
-  transform: rotate(180deg);
-  background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' fill='none'>\
-<g stroke='%2370161f' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'>\
-<circle cx='92' cy='92' r='48'/><circle cx='92' cy='92' r='30'/><circle cx='92' cy='92' r='14'/>\
-<circle cx='170' cy='62' r='34'/><circle cx='170' cy='62' r='21'/><circle cx='170' cy='62' r='10'/>\
-<circle cx='72' cy='176' r='30'/><circle cx='72' cy='176' r='18'/><circle cx='72' cy='176' r='8'/>\
-<circle cx='220' cy='120' r='54'/><circle cx='220' cy='120' r='34'/><circle cx='220' cy='120' r='16'/>\
-<path d='M18 138c31-21 59-65 49-118'/>\
-<path d='M17 138c47 5 102-9 144-37'/>\
-<path d='M146 103c-21-6-49 1-66 18'/>\
-<path d='M116 28c19 19 25 49 14 73'/>\
-<path d='M22 243c32-22 63-24 91-6'/>\
-<path d='M45 214c-2 31 13 59 39 76'/>\
-<path d='M168 220c18-16 43-25 67-24'/>\
-<path d='M201 181c7 23 24 43 46 56'/>\
-<path d='M261 40c29 26 38 68 21 103'/>\
-<path d='M283 143c33-19 51-55 44-95'/>\
-<path d='M273 144c-31-16-67-18-98-6'/>\
-<path d='M305 208c25 19 35 46 29 75'/>\
-<path d='M281 224c30 4 56 21 71 46'/>\
-<path d='M247 241c24 5 46 20 61 40'/>\
-<path d='M86 232c13-11 31-15 47-8'/>\
-<path d='M210 261c13-12 33-15 50-6'/>\
-</g></svg>");
-}
-
 .familia-wrap{
+  max-width: 1450px;
   position: relative;
   z-index: 1;
-  max-width: 1440px;
-}
-
-.familia-heading{
-  position: relative;
-  text-align: center;
-  margin-bottom: 10px;
-  z-index: 2;
-}
-
-.familia-heading::before{
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 42px;
-  transform: translateX(-50%);
-  width: 520px;
-  height: 220px;
-  background:
-    radial-gradient(circle at center, rgba(179,116,116,.14), transparent 68%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.familia-eyebrow{
-  margin: 0 0 10px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: rgba(112,22,31,.86);
-}
-
-.familia-title{
-  margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(72px, 8vw, 128px);
-  font-weight: 500;
-  line-height: .92;
-  color: var(--burgundy);
-}
-
-.familia-subtitle{
-  margin: 8px 0 0;
-  font-size: clamp(22px, 2vw, 34px);
-  line-height: 1.4;
-  color: #6a5252;
 }
 
 .familia-collage{
   position: relative;
-  min-height: 1220px;
-  margin-top: -10px;
+  min-height: 1120px;
 }
 
 .familia-photo{
   position: absolute;
   margin: 0;
-  padding: 12px;
-  background: rgba(255,255,255,.96);
-  box-shadow: 0 24px 55px rgba(0,0,0,.14);
+  padding: 10px;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 20px 45px rgba(0,0,0,.12);
   overflow: hidden;
+  z-index: 2;
 }
 
 .familia-photo img{
@@ -1852,141 +1733,159 @@ filter: blur(30px);
   object-fit: cover;
 }
 
-.photo-main{
+.familia-centerpiece{
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  min-height: 290px;
+  padding: 46px 36px 40px;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(173,110,110,.12), transparent 75%),
+    rgba(251,247,243,.92);
   z-index: 3;
+}
+
+.familia-eyebrow{
+  margin: 0 0 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(112,22,31,.84);
+}
+
+.familia-title{
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(72px, 7vw, 118px);
+  font-weight: 500;
+  line-height: .92;
+  color: var(--burgundy);
+}
+
+.familia-subtitle{
+  margin: 14px 0 0;
+  font-size: clamp(22px, 2vw, 34px);
+  line-height: 1.35;
+  color: #655252;
 }
 
 /* Top row */
 .photo-1{
-  top: 40px;
-  left: 40px;
-  width: 330px;
-  height: 250px;
-  transform: rotate(-3deg);
+  top: 20px;
+  left: 10px;
+  width: 360px;
+  height: 235px;
+  transform: rotate(-2deg);
 }
 
 .photo-2{
-  top: 48px;
-  left: 395px;
+  top: 24px;
+  left: 390px;
   width: 290px;
-  height: 235px;
+  height: 220px;
   transform: rotate(-1deg);
 }
 
 .photo-3{
-  top: 35px;
+  top: 18px;
   left: 705px;
   width: 430px;
-  height: 275px;
-  transform: rotate(1.2deg);
+  height: 230px;
+  transform: rotate(1deg);
 }
 
 .photo-4{
-  top: 70px;
-  left: 1180px;
-  width: 245px;
-  height: 205px;
-  transform: rotate(4deg);
+  top: 42px;
+  left: 1185px;
+  width: 240px;
+  height: 210px;
+  transform: rotate(3deg);
 }
 
-/* Middle */
+/* Left side */
 .photo-5{
-  top: 265px;
-  left: 455px;
-  width: 650px;
-  height: 485px;
-  transform: rotate(.8deg);
+  top: 230px;
+  left: 0;
+  width: 300px;
+  height: 320px;
+  transform: rotate(2deg);
 }
 
 .photo-6{
-  top: 330px;
-  left: 30px;
+  top: 405px;
+  left: 0;
   width: 310px;
-  height: 360px;
-  transform: rotate(2.5deg);
-}
-
-.photo-7{
-  top: 385px;
-  left: 1110px;
-  width: 300px;
   height: 300px;
   transform: rotate(-3deg);
 }
 
-/* Bottom */
-.photo-8{
+.photo-7{
   top: 735px;
-  left: 30px;
-  width: 305px;
-  height: 255px;
+  left: 0;
+  width: 310px;
+  height: 240px;
+  transform: rotate(-2deg);
+}
+
+/* Right side */
+.photo-8{
+  top: 305px;
+  right: 0;
+  width: 330px;
+  height: 320px;
   transform: rotate(-2deg);
 }
 
 .photo-9{
-  top: 760px;
-  left: 365px;
-  width: 375px;
-  height: 270px;
-  transform: rotate(-1deg);
+  top: 560px;
+  right: 70px;
+  width: 280px;
+  height: 245px;
+  transform: rotate(2deg);
 }
 
 .photo-10{
-  top: 760px;
-  left: 770px;
-  width: 375px;
-  height: 270px;
-  transform: rotate(1.5deg);
+  top: 790px;
+  right: 0;
+  width: 300px;
+  height: 310px;
+  transform: rotate(-1deg);
 }
 
-/* soft floral watermark accents around the collage */
+/* Bottom center support photos */
 .familia-collage::before,
 .familia-collage::after{
   content: "";
   position: absolute;
-  pointer-events: none;
-  z-index: 0;
-  opacity: .30;
-  background-repeat: no-repeat;
-  background-size: contain;
+  display: block;
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 20px 45px rgba(0,0,0,.12);
+  z-index: 2;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
 }
 
 .familia-collage::before{
-  left: 250px;
-  top: 250px;
-  width: 180px;
-  height: 180px;
-  background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' fill='none'>\
-<g stroke='%2370161f' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'>\
-<circle cx='70' cy='70' r='28'/><circle cx='70' cy='70' r='16'/><circle cx='70' cy='70' r='7'/>\
-<circle cx='132' cy='112' r='22'/><circle cx='132' cy='112' r='12'/><circle cx='132' cy='112' r='5'/>\
-<path d='M23 106c22-15 40-46 33-82'/>\
-<path d='M23 106c33 4 71-7 100-26'/>\
-<path d='M98 78c-14-3-31 2-42 12'/>\
-<path d='M49 145c17-12 38-13 53-3'/>\
-<path d='M60 128c-1 18 7 34 21 44'/>\
-<path d='M132 126c15 4 29 14 39 27'/>\
-</g></svg>");
+  top: 760px;
+  left: 340px;
+  width: 360px;
+  height: 250px;
+  background-image: url("./assets/familia11.JPG");
+  transform: rotate(-2deg);
 }
 
 .familia-collage::after{
-  right: 120px;
-  bottom: 140px;
-  width: 210px;
-  height: 210px;
-  background-image: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' fill='none'>\
-<g stroke='%2370161f' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'>\
-<circle cx='86' cy='82' r='33'/><circle cx='86' cy='82' r='20'/><circle cx='86' cy='82' r='9'/>\
-<circle cx='154' cy='132' r='24'/><circle cx='154' cy='132' r='14'/><circle cx='154' cy='132' r='6'/>\
-<path d='M38 134c23-16 43-50 35-91'/>\
-<path d='M38 134c36 4 78-8 109-30'/>\
-<path d='M112 102c-16-5-36 1-49 14'/>\
-<path d='M64 170c19-13 42-15 58-4'/>\
-<path d='M79 149c-1 20 8 38 24 49'/>\
-<path d='M146 146c17 4 33 15 44 31'/>\
-</g></svg>");
+  top: 765px;
+  left: 730px;
+  width: 390px;
+  height: 250px;
+  background-image: url("./assets/familia12.JPG");
+  transform: rotate(1.5deg);
 }
 
 /* Responsive */
@@ -1996,19 +1895,32 @@ filter: blur(30px);
   }
 
   .familia-collage{
-    min-height: 1110px;
+    min-height: 1080px;
   }
 
-  .photo-1{ left: 10px; }
-  .photo-2{ left: 320px; }
-  .photo-3{ left: 585px; width: 380px; }
-  .photo-4{ left: 980px; }
-  .photo-5{ left: 360px; width: 560px; }
-  .photo-6{ left: 0; }
-  .photo-7{ left: 945px; }
-  .photo-8{ left: 10px; }
-  .photo-9{ left: 300px; }
-  .photo-10{ left: 700px; }
+  .photo-1{ left: 0; width: 300px; }
+  .photo-2{ left: 315px; width: 250px; }
+  .photo-3{ left: 585px; width: 360px; }
+  .photo-4{ left: 965px; width: 210px; }
+
+  .familia-centerpiece{
+    width: 430px;
+    top: 250px;
+  }
+
+  .photo-8{ width: 280px; }
+  .photo-9{ right: 25px; width: 250px; }
+  .photo-10{ width: 260px; }
+
+  .familia-collage::before{
+    left: 320px;
+    width: 300px;
+  }
+
+  .familia-collage::after{
+    left: 640px;
+    width: 320px;
+  }
 }
 
 @media (max-width: 1200px){
@@ -2017,13 +1929,28 @@ filter: blur(30px);
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
-    margin-top: 34px;
+    margin-top: 30px;
   }
 
-  .familia-photo{
+  .familia-centerpiece{
     position: relative;
     top: auto;
     left: auto;
+    transform: none;
+    width: 100%;
+    min-height: auto;
+    order: -1;
+    padding: 34px 20px 30px;
+    margin-bottom: 8px;
+  }
+
+  .familia-photo,
+  .familia-collage::before,
+  .familia-collage::after{
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
     width: 100% !important;
     height: auto !important;
     transform: none !important;
@@ -2033,17 +1960,9 @@ filter: blur(30px);
     aspect-ratio: 4 / 5;
   }
 
-  .photo-5{
-    grid-column: 1 / -1;
-  }
-
-  .photo-5 img{
-    aspect-ratio: 16 / 11;
-  }
-
   .familia-collage::before,
   .familia-collage::after{
-    display: none;
+    content: none;
   }
 }
 
@@ -2052,17 +1971,13 @@ filter: blur(30px);
     padding: 90px 0 80px;
   }
 
-  .familia-section::before,
-  .familia-section::after{
-    width: 180px;
-    height: 180px;
-    opacity: .9;
+  .familia-collage{
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  .familia-heading::before{
-    width: 320px;
-    height: 160px;
-    top: 32px;
+  .familia-centerpiece{
+    padding: 28px 18px 24px;
   }
 
   .familia-eyebrow{
@@ -2076,24 +1991,13 @@ filter: blur(30px);
 
   .familia-subtitle{
     font-size: clamp(18px, 5.5vw, 24px);
-    padding: 0 10px;
-  }
-
-  .familia-collage{
-    grid-template-columns: 1fr;
-    gap: 16px;
   }
 
   .familia-photo{
     padding: 8px;
   }
 
-  .photo-5{
-    grid-column: auto;
-  }
-
-  .familia-photo img,
-  .photo-5 img{
+  .familia-photo img{
     aspect-ratio: 4 / 5;
   }
 }
