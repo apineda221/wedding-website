@@ -1701,8 +1701,8 @@ filter: blur(30px);
   padding: 110px 0 90px;
 
   background:
-    linear-gradient(rgba(251,247,243,.88), rgba(251,247,243,.92)),
-    url("./assets/familiabg.png");
+  linear-gradient(rgba(80,27,33,.15), rgba(251,247,243,.92)),
+  url("./assets/familiabg.png");
 
   background-size: cover;
   background-position: center;
