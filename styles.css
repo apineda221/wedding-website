@@ -1691,3 +1691,293 @@ filter: blur(30px);
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   OUR FAMILIA GALLERY
+   ========================= */
+.familia-section{
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 110px;
+  background:
+    linear-gradient(rgba(251,247,243,.90), rgba(251,247,243,.90)),
+    url("./assets/paper-texture.jpg");
+  background-color: #fbf7f3;
+}
+
+/* Burgundy floral corner accents */
+.familia-section::before,
+.familia-section::after{
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: .95;
+  z-index: 0;
+}
+
+.familia-section::before{
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='none'>\
+<g stroke='%2370161f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>\
+<path d='M34 114c25-21 45-61 40-92'/>\
+<path d='M34 114c38 3 82-10 110-36'/>\
+<path d='M145 77c-17-3-40 4-53 17'/>\
+<path d='M89 22c16 14 22 40 16 60'/>\
+<path d='M25 170c28-18 50-17 70 2'/>\
+<path d='M41 156c-1 24 10 45 29 57'/>\
+<path d='M186 24c21 20 27 53 14 79'/>\
+<path d='M200 103c25-17 38-47 34-76'/>\
+<path d='M196 102c-23-11-51-12-74-2'/>\
+<path d='M244 136c23 16 32 41 26 68'/>\
+<path d='M216 148c26 3 48 18 61 39'/>\
+<path d='M190 166c20 4 38 16 50 33'/>\
+<path d='M66 54c10-9 26-12 39-6'/>\
+<path d='M162 39c11-10 28-12 42-4'/>\
+<path d='M230 166c11-9 27-10 39-2'/>\
+<circle cx='84' cy='57' r='28'/>\
+<circle cx='84' cy='57' r='18'/>\
+<circle cx='84' cy='57' r='9'/>\
+<circle cx='173' cy='53' r='34'/>\
+<circle cx='173' cy='53' r='22'/>\
+<circle cx='173' cy='53' r='11'/>\
+<circle cx='232' cy='188' r='26'/>\
+<circle cx='232' cy='188' r='16'/>\
+<circle cx='232' cy='188' r='8'/>\
+<path d='M116 112c7-9 19-15 31-15 12 0 24 6 31 15-7 9-19 15-31 15-12 0-24-6-31-15Z'/>\
+<path d='M18 193c9-11 25-18 40-18 16 0 31 7 40 18-9 11-24 18-40 18-15 0-31-7-40-18Z'/>\
+</g></svg>");
+}
+
+.familia-section::after{
+  right: 0;
+  bottom: 0;
+  transform: rotate(180deg);
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='none'>\
+<g stroke='%2370161f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>\
+<path d='M34 114c25-21 45-61 40-92'/>\
+<path d='M34 114c38 3 82-10 110-36'/>\
+<path d='M145 77c-17-3-40 4-53 17'/>\
+<path d='M89 22c16 14 22 40 16 60'/>\
+<path d='M25 170c28-18 50-17 70 2'/>\
+<path d='M41 156c-1 24 10 45 29 57'/>\
+<path d='M186 24c21 20 27 53 14 79'/>\
+<path d='M200 103c25-17 38-47 34-76'/>\
+<path d='M196 102c-23-11-51-12-74-2'/>\
+<path d='M244 136c23 16 32 41 26 68'/>\
+<path d='M216 148c26 3 48 18 61 39'/>\
+<path d='M190 166c20 4 38 16 50 33'/>\
+<path d='M66 54c10-9 26-12 39-6'/>\
+<path d='M162 39c11-10 28-12 42-4'/>\
+<path d='M230 166c11-9 27-10 39-2'/>\
+<circle cx='84' cy='57' r='28'/>\
+<circle cx='84' cy='57' r='18'/>\
+<circle cx='84' cy='57' r='9'/>\
+<circle cx='173' cy='53' r='34'/>\
+<circle cx='173' cy='53' r='22'/>\
+<circle cx='173' cy='53' r='11'/>\
+<circle cx='232' cy='188' r='26'/>\
+<circle cx='232' cy='188' r='16'/>\
+<circle cx='232' cy='188' r='8'/>\
+<path d='M116 112c7-9 19-15 31-15 12 0 24 6 31 15-7 9-19 15-31 15-12 0-24-6-31-15Z'/>\
+<path d='M18 193c9-11 25-18 40-18 16 0 31 7 40 18-9 11-24 18-40 18-15 0-31-7-40-18Z'/>\
+</g></svg>");
+}
+
+.familia-wrap{
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+}
+
+.familia-heading{
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.familia-eyebrow{
+  margin: 0 0 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  color: rgba(80,27,33,.88);
+}
+
+.familia-title{
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(64px, 7vw, 108px);
+  font-weight: 500;
+  line-height: .95;
+  color: var(--burgundy);
+}
+
+.familia-subtitle{
+  margin: 10px 0 0;
+  font-size: clamp(20px, 2vw, 34px);
+  line-height: 1.4;
+  color: #5a4747;
+}
+
+.familia-collage{
+  position: relative;
+  min-height: 980px;
+  margin-top: 18px;
+}
+
+.familia-photo{
+  position: absolute;
+  margin: 0;
+  background: #fff;
+  padding: 12px;
+  box-shadow: 0 24px 55px rgba(0,0,0,.13);
+  overflow: hidden;
+}
+
+.familia-photo img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* collage placement */
+.photo-1{
+  top: 40px;
+  left: 20px;
+  width: 290px;
+  height: 350px;
+  transform: rotate(-5deg);
+}
+
+.photo-2{
+  top: 250px;
+  left: 0;
+  width: 300px;
+  height: 340px;
+  transform: rotate(4deg);
+}
+
+.photo-3{
+  top: 60px;
+  left: 980px;
+  width: 300px;
+  height: 215px;
+  transform: rotate(4deg);
+}
+
+.photo-4{
+  top: 245px;
+  left: 1030px;
+  width: 250px;
+  height: 300px;
+  transform: rotate(-4deg);
+}
+
+.photo-5{
+  top: 150px;
+  left: 340px;
+  width: 620px;
+  height: 520px;
+  z-index: 3;
+}
+
+.photo-6{
+  top: 610px;
+  left: 20px;
+  width: 280px;
+  height: 250px;
+  transform: rotate(-2deg);
+}
+
+.photo-7{
+  top: 640px;
+  left: 325px;
+  width: 310px;
+  height: 230px;
+  transform: rotate(2deg);
+}
+
+/* Mobile layout */
+@media (max-width: 1200px){
+  .familia-collage{
+    min-height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 34px;
+  }
+
+  .familia-photo{
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+  }
+
+  .familia-photo img{
+    aspect-ratio: 4 / 5;
+  }
+
+  .photo-5{
+    grid-column: 1 / -1;
+  }
+
+  .photo-5 img{
+    aspect-ratio: 16 / 11;
+  }
+}
+
+@media (max-width: 860px){
+  .familia-section{
+    padding: 90px 0 80px;
+  }
+
+  .familia-section::before,
+  .familia-section::after{
+    width: 150px;
+    height: 150px;
+    opacity: .9;
+  }
+
+  .familia-eyebrow{
+    font-size: 15px;
+    letter-spacing: .16em;
+  }
+
+  .familia-title{
+    font-size: clamp(48px, 14vw, 74px);
+  }
+
+  .familia-subtitle{
+    font-size: clamp(18px, 5.5vw, 24px);
+    padding: 0 8px;
+  }
+
+  .familia-collage{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .photo-5{
+    grid-column: auto;
+  }
+
+  .familia-photo{
+    padding: 8px;
+  }
+
+  .familia-photo img,
+  .photo-5 img{
+    aspect-ratio: 4 / 5;
+  }
+}
