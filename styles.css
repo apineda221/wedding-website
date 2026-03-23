@@ -1699,10 +1699,14 @@ filter: blur(30px);
   position: relative;
   overflow: hidden;
   padding: 110px 0 90px;
+
   background:
-    radial-gradient(circle at center, rgba(173, 110, 110, 0.08), transparent 38%),
-    linear-gradient(rgba(251,247,243,.97), rgba(251,247,243,.97));
-  background-color: #fbf7f3;
+    linear-gradient(rgba(251,247,243,.88), rgba(251,247,243,.92)),
+    url("./assets/familiabg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .familia-wrap{
