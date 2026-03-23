@@ -1031,6 +1031,253 @@ p{
 }
 
 /* =========================
+   OUR STORY — EDITORIAL ROMANCE
+   ========================= */
+.ourstory-editorial{
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  background: #f7f2ed;
+}
+
+.ourstory-editorial::before{
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(80,27,33,.07) 0%, rgba(80,27,33,0) 70%);
+  pointer-events: none;
+}
+
+.ourstory-editorial::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 90px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(80,27,33,.06) 0%, rgba(80,27,33,0) 70%);
+  pointer-events: none;
+}
+
+.ourstory-wrap{
+  max-width: 1220px;
+}
+
+.ourstory-intro{
+  max-width: 760px;
+  margin: 0 0 64px;
+}
+
+.ourstory-eyebrow{
+  margin: 0 0 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: rgba(28,28,28,.72);
+}
+
+.ourstory-title{
+  margin: 0 0 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(54px, 6vw, 96px);
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.03em;
+  color: var(--burgundy);
+}
+
+.ourstory-lead{
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(19px, 1.7vw, 28px);
+  line-height: 1.55;
+  color: #2d2725;
+}
+
+.ourstory-block{
+  display: grid;
+  align-items: center;
+  gap: 56px;
+}
+
+.ourstory-block + .ourstory-block{
+  margin-top: 90px;
+}
+
+.ourstory-block-met{
+  grid-template-columns: minmax(0, 520px) minmax(0, 1fr);
+}
+
+.ourstory-block-proposal{
+  grid-template-columns: minmax(0, 1fr) minmax(0, 390px);
+}
+
+.ourstory-media-card{
+  position: relative;
+}
+
+.ourstory-media-card::before{
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 100%;
+  height: 100%;
+  background: rgba(80,27,33,.08);
+  z-index: 0;
+}
+
+.ourstory-feature-img{
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 0 26px 60px rgba(0,0,0,.14);
+}
+
+.ourstory-copy{
+  position: relative;
+  z-index: 1;
+}
+
+.ourstory-kicker{
+  margin: 0 0 8px;
+  font-size: 15px;
+  letter-spacing: .08em;
+  color: rgba(28,28,28,.68);
+}
+
+.ourstory-script-title{
+  margin: 0 0 18px;
+  font-family: 'Italianno', cursive;
+  font-size: clamp(48px, 4vw, 72px);
+  font-weight: 400;
+  line-height: .95;
+  color: var(--burgundy);
+}
+
+.ourstory-body{
+  max-width: 640px;
+  margin: 0 0 18px;
+  font-size: clamp(17px, 1.2vw, 20px);
+  line-height: 1.75;
+  color: #332d2a;
+}
+
+.ourstory-note{
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  border: 1px solid rgba(80,27,33,.14);
+  background: rgba(80,27,33,.06);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--burgundy);
+}
+
+.ourstory-video-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.ourstory-video-card{
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 26px 60px rgba(0,0,0,.18);
+}
+
+.ourstory-video-card::before{
+  content: "";
+  position: absolute;
+  inset: -14px 18px 18px -14px;
+  border: 1px solid rgba(80,27,33,.14);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ourstory-video-card iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 1;
+}
+
+/* Mobile */
+@media (max-width: 980px){
+  .ourstory-block-met,
+  .ourstory-block-proposal{
+    grid-template-columns: 1fr;
+  }
+
+  .ourstory-block-proposal{
+    gap: 34px;
+  }
+
+  .ourstory-video-wrap{
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 860px){
+  .ourstory-editorial{
+    padding: 95px 0;
+  }
+
+  .ourstory-intro{
+    margin-bottom: 44px;
+  }
+
+  .ourstory-eyebrow{
+    font-size: 15px;
+    letter-spacing: .18em;
+  }
+
+  .ourstory-title{
+    font-size: clamp(46px, 13vw, 72px);
+    margin-bottom: 14px;
+  }
+
+  .ourstory-lead{
+    font-size: clamp(18px, 5vw, 22px);
+    line-height: 1.55;
+  }
+
+  .ourstory-block + .ourstory-block{
+    margin-top: 64px;
+  }
+
+  .ourstory-script-title{
+    font-size: clamp(44px, 12vw, 60px);
+  }
+
+  .ourstory-body{
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .ourstory-media-card::before{
+    top: 14px;
+    left: 14px;
+  }
+
+  .ourstory-video-card{
+    max-width: 320px;
+  }
+}
+
+/* =========================
    RESPONSIVE
    ========================= */
 @media (max-width: 1100px){
