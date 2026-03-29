@@ -1693,322 +1693,186 @@ filter: blur(30px);
 }
 
 /* =========================
-   OUR FAMILIA GALLERY — EDITORIAL COLLAGE
+   OUR FAMILIA — PREMIUM EDITORIAL
    ========================= */
-.familia-section{
+.familia-editorial{
   position: relative;
   overflow: hidden;
-  padding: 110px 0 90px;
-
+  padding: 130px 0;
   background:
-  linear-gradient(rgba(80,27,33,.15), rgba(251,247,243,.92)),
-  url("./assets/familiabg.png");
-
+    linear-gradient(rgba(251,247,243,.93), rgba(251,247,243,.95)),
+    url("./assets/familiabg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.familia-wrap{
-  max-width: 1450px;
-  position: relative;
-  z-index: 1;
+.familia-editorial-wrap{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 560px);
+  gap: 84px;
+  align-items: center;
+  max-width: 1280px;
 }
 
-.familia-collage{
-  position: relative;
-  min-height: 1120px;
+.familia-editorial-copy{
+  max-width: 700px;
 }
 
-.familia-photo{
-  position: absolute;
-  margin: 0;
-
-  /* Polaroid frame */
-  background: #fdfcf9;
-  padding: 10px 10px 28px 10px; /* thicker bottom */
-
-  box-shadow:
-    0 18px 35px rgba(0,0,0,.15),
-    0 3px 8px rgba(0,0,0,.08);
-
-  overflow: hidden;
-  z-index: 2;
-  border-radius: 2px;
-}
-
-.familia-photo img{
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.familia-centerpiece{
-  position: absolute;
-  top: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 500px;
-  min-height: 290px;
-  padding: 46px 36px 40px;
-  text-align: center;
-  background:
-    radial-gradient(circle at center, rgba(173,110,110,.12), transparent 75%),
-    rgba(251,247,243,.92);
-  z-index: 3;
-}
-
-.familia-eyebrow{
-  margin: 0 0 14px;
+.familia-editorial-eyebrow{
+  margin: 0 0 18px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  letter-spacing: .22em;
+  font-size: 20px;
+  letter-spacing: .24em;
   text-transform: uppercase;
-  color: rgba(112,22,31,.84);
+  color: rgba(80,27,33,.80);
 }
 
-.familia-title{
-  margin: 0;
+.familia-editorial-title{
+  margin: 0 0 24px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(72px, 7vw, 118px);
+  font-size: clamp(64px, 7vw, 112px);
   font-weight: 500;
   line-height: .92;
+  letter-spacing: -.03em;
   color: var(--burgundy);
 }
 
-.familia-subtitle{
-  margin: 14px 0 0;
-  font-size: clamp(22px, 2vw, 34px);
-  line-height: 1.35;
-  color: #655252;
+.familia-editorial-text{
+  margin: 0;
+  max-width: 640px;
+  font-size: clamp(22px, 1.8vw, 34px);
+  line-height: 1.5;
+  color: #2f2a29;
 }
 
-/* Top row */
-.photo-1{
-  top: 20px;
-  left: 10px;
-  width: 360px;
-  height: 235px;
-  transform: rotate(-2deg);
+.familia-editorial-gallery{
+  position: relative;
+  min-height: 760px;
 }
 
-.photo-2{
-  top: 24px;
-  left: 390px;
-  width: 290px;
-  height: 220px;
-  transform: rotate(-1deg);
-}
-
-.photo-3{
-  top: 18px;
-  left: 705px;
-  width: 430px;
-  height: 230px;
-  transform: rotate(1deg);
-}
-
-.photo-4{
-  top: 42px;
-  left: 1185px;
-  width: 240px;
-  height: 210px;
-  transform: rotate(3deg);
-}
-
-/* Left side */
-.photo-5{
-  top: 230px;
-  left: 0;
-  width: 300px;
-  height: 320px;
-  transform: rotate(2deg);
-}
-
-.photo-6{
-  top: 405px;
-  left: 0;
-  width: 310px;
-  height: 300px;
-  transform: rotate(-3deg);
-}
-
-.photo-7{
-  top: 735px;
-  left: 0;
-  width: 310px;
-  height: 240px;
-  transform: rotate(-2deg);
-}
-
-/* Right side */
-.photo-8{
-  top: 305px;
-  right: 0;
-  width: 330px;
-  height: 320px;
-  transform: rotate(-2deg);
-}
-
-.photo-9{
-  top: 560px;
-  right: 70px;
-  width: 280px;
-  height: 245px;
-  transform: rotate(2deg);
-}
-
-.photo-10{
-  top: 790px;
-  right: 0;
-  width: 300px;
-  height: 310px;
-  transform: rotate(-1deg);
-}
-
-/* Bottom center support photos */
-.familia-collage::before,
-.familia-collage::after{
-  content: "";
+.familia-editorial-main{
   position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 520px;
+  height: 650px;
+  margin: 0;
+  background: rgba(255,255,255,.96);
+  padding: 12px 12px 18px;
+  box-shadow: 0 26px 60px rgba(0,0,0,.14);
+}
+
+.familia-editorial-main img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  filter: contrast(1.02) saturate(.98);
+}
+
+.familia-editorial-accent{
+  position: absolute;
+  left: -20px;
+  bottom: 40px;
+  width: 290px;
+  height: 360px;
+  margin: 0;
   background: rgba(255,255,255,.98);
-  box-shadow: 0 20px 45px rgba(0,0,0,.12);
+  padding: 10px 10px 24px;
+  box-shadow: 0 20px 45px rgba(0,0,0,.14);
   z-index: 2;
-  background-size: cover;
-  background-position: center;
-  padding: 10px;
 }
 
-.familia-collage::before{
-  top: 760px;
-  left: 340px;
-  width: 360px;
-  height: 250px;
-  background-image: url("./assets/familia11.JPG");
-  transform: rotate(-2deg);
+.familia-editorial-accent img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.familia-collage::after{
-  top: 765px;
-  left: 730px;
-  width: 390px;
-  height: 250px;
-  background-image: url("./assets/familia12.JPG");
-  transform: rotate(1.5deg);
+.familia-editorial-badge{
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+  padding: 20px 28px;
+  background: rgba(80,27,33,.94);
+  color: #fff;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  line-height: 1.05;
+  box-shadow: 0 18px 35px rgba(0,0,0,.18);
 }
 
-/* Responsive */
-@media (max-width: 1450px){
-  .familia-wrap{
-    max-width: 1220px;
+/* Mobile */
+@media (max-width: 1100px){
+  .familia-editorial-wrap{
+    grid-template-columns: 1fr;
+    gap: 50px;
   }
 
-  .familia-collage{
-    min-height: 1080px;
-  }
-
-  .photo-1{ left: 0; width: 300px; }
-  .photo-2{ left: 315px; width: 250px; }
-  .photo-3{ left: 585px; width: 360px; }
-  .photo-4{ left: 965px; width: 210px; }
-
-  .familia-centerpiece{
-    width: 430px;
-    top: 250px;
-  }
-
-  .photo-8{ width: 280px; }
-  .photo-9{ right: 25px; width: 250px; }
-  .photo-10{ width: 260px; }
-
-  .familia-collage::before{
-    left: 320px;
-    width: 300px;
-  }
-
-  .familia-collage::after{
-    left: 640px;
-    width: 320px;
-  }
-}
-
-@media (max-width: 1200px){
-  .familia-collage{
-    min-height: auto;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
-    margin-top: 30px;
-  }
-
-  .familia-centerpiece{
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
+  .familia-editorial-gallery{
+    max-width: 620px;
     width: 100%;
-    min-height: auto;
-    order: -1;
-    padding: 34px 20px 30px;
-    margin-bottom: 8px;
+    margin: 0 auto;
   }
 
-  .familia-photo,
-  .familia-collage::before,
-  .familia-collage::after{
+  .familia-editorial-main{
     position: relative;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    width: 100% !important;
-    height: auto !important;
-    transform: none !important;
+    right: auto;
+    max-width: 100%;
+    margin-left: auto;
   }
 
-  .familia-photo img{
-    aspect-ratio: 4 / 5;
-  }
-
-  .familia-collage::before,
-  .familia-collage::after{
-    content: none;
+  .familia-editorial-accent{
+    left: 0;
   }
 }
 
 @media (max-width: 860px){
-  .familia-section{
-    padding: 90px 0 80px;
+  .familia-editorial{
+    padding: 95px 0;
   }
 
-  .familia-collage{
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .familia-centerpiece{
-    padding: 28px 18px 24px;
-  }
-
-  .familia-eyebrow{
+  .familia-editorial-eyebrow{
     font-size: 15px;
-    letter-spacing: .16em;
+    letter-spacing: .18em;
+    margin-bottom: 14px;
   }
 
-  .familia-title{
-    font-size: clamp(52px, 14vw, 78px);
+  .familia-editorial-title{
+    font-size: clamp(52px, 14vw, 76px);
+    margin-bottom: 18px;
   }
 
-  .familia-subtitle{
-    font-size: clamp(18px, 5.5vw, 24px);
+  .familia-editorial-text{
+    font-size: clamp(19px, 5.2vw, 24px);
+    line-height: 1.55;
   }
 
-  .familia-photo{
-    padding: 8px;
+  .familia-editorial-gallery{
+    min-height: 620px;
   }
 
-  .familia-photo img{
-    aspect-ratio: 4 / 5;
+  .familia-editorial-main{
+    height: 470px;
+    padding: 8px 8px 14px;
+  }
+
+  .familia-editorial-accent{
+    width: 180px;
+    height: 220px;
+    bottom: 10px;
+    padding: 8px 8px 18px;
+  }
+
+  .familia-editorial-badge{
+    right: 10px;
+    bottom: 8px;
+    padding: 14px 18px;
+    font-size: 22px;
   }
 }
