@@ -1876,3 +1876,48 @@ filter: blur(30px);
     font-size: 22px;
   }
 }
+
+// ===============================
+// Familia Gallery Lightbox
+// ===============================
+(() => {
+  const lightbox = document.getElementById("familiaLightbox");
+  const lightboxImg = document.getElementById("familiaLightboxImg");
+  const lightboxClose = document.getElementById("familiaLightboxClose");
+  const thumbs = document.querySelectorAll(".familia-thumb");
+
+  if (!lightbox || !lightboxImg || !lightboxClose || !thumbs.length) return;
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const src = thumb.getAttribute("data-full");
+      if (src) openLightbox(src);
+    });
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
+})();
