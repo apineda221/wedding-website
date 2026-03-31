@@ -2214,3 +2214,149 @@ filter: blur(30px);
     right: 12px;
   }
 }
+
+/* =========================
+   OUR FAMILIA — EDITORIAL ARCH LAYOUT
+   ========================= */
+.familia-dates{
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 100px;
+  background:
+    linear-gradient(rgba(251,247,243,.94), rgba(251,247,243,.96)),
+    url("./assets/familiabg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.familia-dates-wrap{
+  max-width: 1380px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 54px;
+  align-items: start;
+}
+
+.familia-dates-left{
+  padding-top: 10px;
+}
+
+.familia-dates-title{
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(72px, 9vw, 132px);
+  line-height: .88;
+  letter-spacing: -.04em;
+  color: rgba(80,27,33,.92);
+}
+
+.familia-dates-right{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 42px;
+  align-items: start;
+}
+
+.familia-card{
+  position: relative;
+  text-align: center;
+}
+
+.familia-arch{
+  width: 100%;
+  aspect-ratio: 0.72 / 1;
+  overflow: hidden;
+  border-radius: 999px 999px 0 0;
+  background: rgba(255,255,255,.65);
+}
+
+.familia-arch img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(100%) contrast(1.02);
+}
+
+.familia-number{
+  margin-top: -34px;
+  text-align: right;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(58px, 5vw, 88px);
+  line-height: 1;
+  color: rgba(80,27,33,.92);
+}
+
+.familia-line{
+  width: 1px;
+  height: 88px;
+  margin: 26px auto 22px;
+  background: rgba(80,27,33,.18);
+}
+
+.familia-label{
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 2vw, 42px);
+  line-height: 1.05;
+  color: rgba(80,27,33,.92);
+}
+
+/* Tablet */
+@media (max-width: 1100px){
+  .familia-dates-wrap{
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .familia-dates-left{
+    padding-top: 0;
+  }
+
+  .familia-dates-title{
+    text-align: center;
+  }
+
+  .familia-dates-right{
+    gap: 26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 860px){
+  .familia-dates{
+    padding: 90px 0 80px;
+  }
+
+  .familia-dates-wrap{
+    gap: 28px;
+  }
+
+  .familia-dates-title{
+    text-align: center;
+    font-size: clamp(52px, 15vw, 82px);
+    line-height: .9;
+  }
+
+  .familia-dates-right{
+    grid-template-columns: 1fr;
+    gap: 34px;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .familia-number{
+    margin-top: -24px;
+    font-size: 56px;
+  }
+
+  .familia-line{
+    height: 58px;
+    margin: 18px auto 16px;
+  }
+
+  .familia-label{
+    font-size: 30px;
+  }
+}
