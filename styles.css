@@ -2240,6 +2240,8 @@ filter: blur(30px);
 
 .familia-dates-left{
   padding-top: 10px;
+  position: relative;
+  z-index: 3;
 }
 
 .familia-dates-title{
@@ -2249,6 +2251,8 @@ filter: blur(30px);
   line-height: .88;
   letter-spacing: -.04em;
   color: rgba(80,27,33,.92);
+  position: relative;
+  z-index: 3;
 }
 
 .familia-dates-right{
@@ -2261,6 +2265,7 @@ filter: blur(30px);
 .familia-card{
   position: relative;
   text-align: center;
+  z-index: 2;
 }
 
 .familia-arch{
@@ -2280,18 +2285,20 @@ filter: blur(30px);
 }
 
 .familia-number{
-  margin-top: -34px;
-  text-align: right;
+  margin-top: 14px;
+  text-align: center;
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(58px, 5vw, 88px);
   line-height: 1;
   color: rgba(80,27,33,.92);
+  position: relative;
+  z-index: 3;
 }
 
 .familia-line{
   width: 1px;
-  height: 88px;
-  margin: 26px auto 22px;
+  height: 72px;
+  margin: 20px auto 18px;
   background: rgba(80,27,33,.18);
 }
 
@@ -2347,7 +2354,7 @@ filter: blur(30px);
   }
 
   .familia-number{
-    margin-top: -24px;
+    margin-top: 12px;
     font-size: 56px;
   }
 
