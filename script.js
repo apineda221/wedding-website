@@ -261,7 +261,7 @@ document.addEventListener("keydown", (event) => {
 })();
 
 // ===============================
-// Intro Memory Flip
+// Intro Memory Flip — Stylized
 // ===============================
 (() => {
   const introOverlay = document.getElementById("introOverlay");
@@ -272,18 +272,20 @@ document.addEventListener("keydown", (event) => {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let currentIndex = 0;
-  const holdTime = prefersReduced ? 250 : 650;   // how long each image stays
-  const endDelay = prefersReduced ? 150 : 500;   // little pause before fade
+  const holdTime = prefersReduced ? 180 : 360; // quicker flip
+  const endDelay = prefersReduced ? 120 : 300;
   let intervalId;
 
-  function showCard(index) {
+  function renderStack(index) {
     cards.forEach((card, i) => {
-      card.classList.remove("active", "prev");
+      card.classList.remove("active", "prev", "preprev");
 
       if (i === index) {
         card.classList.add("active");
       } else if (i === index - 1) {
         card.classList.add("prev");
+      } else if (i === index - 2) {
+        card.classList.add("preprev");
       }
     });
   }
@@ -296,7 +298,7 @@ document.addEventListener("keydown", (event) => {
 
   function startIntro() {
     document.body.style.overflow = "hidden";
-    showCard(currentIndex);
+    renderStack(currentIndex);
 
     intervalId = setInterval(() => {
       currentIndex += 1;
@@ -306,7 +308,7 @@ document.addEventListener("keydown", (event) => {
         return;
       }
 
-      showCard(currentIndex);
+      renderStack(currentIndex);
     }, holdTime);
   }
 
