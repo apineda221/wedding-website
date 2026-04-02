@@ -2369,7 +2369,7 @@ filter: blur(30px);
 }
 
 /* =========================
-   INTRO MEMORY FLIP
+   INTRO MEMORY FLIP — STYLIZED
    ========================= */
 .intro-overlay{
   position: fixed;
@@ -2378,15 +2378,16 @@ filter: blur(30px);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background:
-    linear-gradient(rgba(251,247,243,.88), rgba(251,247,243,.92)),
+    linear-gradient(rgba(251,247,243,.86), rgba(251,247,243,.92)),
     url("./assets/familiabg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 1;
   visibility: visible;
-  transition: opacity .9s ease, visibility .9s ease;
+  transition: opacity .8s ease, visibility .8s ease;
 }
 
 .intro-overlay.is-hidden{
@@ -2395,19 +2396,32 @@ filter: blur(30px);
   pointer-events: none;
 }
 
+.intro-overlay::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(80,27,33,.10), transparent 30%),
+    radial-gradient(circle at 80% 75%, rgba(80,27,33,.08), transparent 28%);
+  pointer-events: none;
+}
+
 .intro-stage{
-  width: min(92vw, 1180px);
+  position: relative;
+  z-index: 2;
+  width: min(94vw, 1220px);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 42px;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 40px;
   align-items: center;
 }
 
 .intro-card-stack{
   position: relative;
   width: 100%;
-  height: min(72vh, 760px);
-  perspective: 1400px;
+  height: min(74vh, 780px);
+  perspective: 1800px;
+  transform-style: preserve-3d;
 }
 
 .intro-card{
@@ -2419,43 +2433,59 @@ filter: blur(30px);
   background: #fdfcf9;
   padding: 12px 12px 28px;
   box-shadow:
-    0 20px 45px rgba(0,0,0,.16),
-    0 4px 10px rgba(0,0,0,.08);
+    0 24px 60px rgba(0,0,0,.20),
+    0 8px 16px rgba(0,0,0,.08);
   border-radius: 2px;
+  backface-visibility: hidden;
   opacity: 0;
-  transform:
-    translateX(24px)
-    rotateY(-18deg)
-    rotateZ(1.5deg)
-    scale(.96);
   transform-origin: center center;
+  transform:
+    rotateY(-80deg)
+    rotateZ(-3deg)
+    scale(.92)
+    translateX(120px);
   transition:
-    opacity .55s ease,
-    transform .75s cubic-bezier(.22,.8,.24,1);
+    transform .7s cubic-bezier(.2,.8,.2,1),
+    opacity .35s ease;
+}
+
+.intro-card::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 10px rgba(0,0,0,.08);
 }
 
 .intro-card.active{
   opacity: 1;
   transform:
-    translateX(0)
     rotateY(0deg)
     rotateZ(0deg)
-    scale(1);
-  z-index: 3;
+    scale(1)
+    translateX(0);
+  z-index: 4;
 }
 
 .intro-card.prev{
-  opacity: .18;
+  opacity: .22;
   transform:
-    translateX(-24px)
-    rotateY(16deg)
-    rotateZ(-1.5deg)
-    scale(.95);
-  z-index: 2;
+    rotateY(18deg)
+    rotateZ(2deg)
+    scale(.96)
+    translateX(-28px);
+  z-index: 3;
 }
 
-.intro-card::selection{
-  background: transparent;
+.intro-card.preprev{
+  opacity: .12;
+  transform:
+    rotateY(22deg)
+    rotateZ(-2deg)
+    scale(.93)
+    translateX(-46px)
+    translateY(8px);
+  z-index: 2;
 }
 
 .intro-copy{
@@ -2463,10 +2493,10 @@ filter: blur(30px);
 }
 
 .intro-kicker{
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 18px;
-  letter-spacing: .24em;
+  letter-spacing: .22em;
   text-transform: uppercase;
   color: rgba(80,27,33,.78);
 }
@@ -2474,7 +2504,7 @@ filter: blur(30px);
 .intro-title{
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(48px, 6vw, 86px);
+  font-size: clamp(46px, 6vw, 84px);
   line-height: .92;
   letter-spacing: -.03em;
   color: var(--burgundy);
@@ -2485,7 +2515,7 @@ filter: blur(30px);
   .intro-stage{
     width: min(92vw, 560px);
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
   }
 
   .intro-copy{
@@ -2495,15 +2525,15 @@ filter: blur(30px);
   .intro-kicker{
     font-size: 14px;
     letter-spacing: .18em;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .intro-title{
-    font-size: clamp(40px, 12vw, 60px);
+    font-size: clamp(36px, 11vw, 56px);
   }
 
   .intro-card-stack{
-    height: min(62vh, 560px);
+    height: min(60vh, 520px);
   }
 
   .intro-card{
