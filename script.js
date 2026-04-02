@@ -259,3 +259,56 @@ document.addEventListener("keydown", (event) => {
     }
   });
 })();
+
+// ===============================
+// Intro Memory Flip
+// ===============================
+(() => {
+  const introOverlay = document.getElementById("introOverlay");
+  const cards = Array.from(document.querySelectorAll(".intro-card"));
+
+  if (!introOverlay || !cards.length) return;
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let currentIndex = 0;
+  const holdTime = prefersReduced ? 250 : 650;   // how long each image stays
+  const endDelay = prefersReduced ? 150 : 500;   // little pause before fade
+  let intervalId;
+
+  function showCard(index) {
+    cards.forEach((card, i) => {
+      card.classList.remove("active", "prev");
+
+      if (i === index) {
+        card.classList.add("active");
+      } else if (i === index - 1) {
+        card.classList.add("prev");
+      }
+    });
+  }
+
+  function finishIntro() {
+    clearInterval(intervalId);
+    introOverlay.classList.add("is-hidden");
+    document.body.style.overflow = "";
+  }
+
+  function startIntro() {
+    document.body.style.overflow = "hidden";
+    showCard(currentIndex);
+
+    intervalId = setInterval(() => {
+      currentIndex += 1;
+
+      if (currentIndex >= cards.length) {
+        setTimeout(finishIntro, endDelay);
+        return;
+      }
+
+      showCard(currentIndex);
+    }, holdTime);
+  }
+
+  window.addEventListener("load", startIntro);
+})();
