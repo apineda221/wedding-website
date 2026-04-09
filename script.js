@@ -314,3 +314,35 @@ document.addEventListener("keydown", (event) => {
 
   window.addEventListener("load", startIntro);
 })();
+
+// ===============================
+// Dress Code Modal
+// ===============================
+(() => {
+  const trigger = document.getElementById("dresscodeTrigger");
+  const modal = document.getElementById("dresscodeModal");
+  const closeBtn = document.getElementById("dresscodeClose");
+  const backdrop = document.getElementById("dresscodeBackdrop");
+
+  if (!trigger || !modal || !closeBtn || !backdrop) return;
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  trigger.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+})();
