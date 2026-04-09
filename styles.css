@@ -2547,3 +2547,105 @@ filter: blur(30px);
     transition: none !important;
   }
 }
+
+/* =========================
+   RSVP — EDITORIAL
+   ========================= */
+.rsvp-editorial{
+  padding: 120px 0 130px;
+  background: #f6f2ef;
+}
+
+.rsvp-editorial-wrap{
+  max-width: 1320px;
+  text-align: center;
+}
+
+.rsvp-editorial-eyebrow{
+  margin: 0 0 28px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2vw, 34px);
+  letter-spacing: .20em;
+  line-height: 1.45;
+  text-transform: uppercase;
+  color: #1d1b1b;
+}
+
+.rsvp-editorial-title{
+  margin: 0 auto 34px;
+  max-width: 1500px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(54px, 6vw, 112px);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.04em;
+  color: #111;
+}
+
+.rsvp-editorial-text{
+  max-width: 980px;
+  margin: 0 auto;
+  font-size: clamp(24px, 2vw, 38px);
+  line-height: 1.55;
+  color: #2b2a2a;
+}
+
+.rsvp-editorial-actions{
+  margin-top: 54px;
+}
+
+.rsvp-editorial-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 460px;
+  padding: 28px 54px;
+  background: var(--burgundy);
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 2vw, 42px);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  box-shadow: 0 20px 45px rgba(0,0,0,.10);
+}
+
+.rsvp-editorial-btn:hover{
+  filter: brightness(.96);
+}
+
+/* Mobile */
+@media (max-width: 860px){
+  .rsvp-editorial{
+    padding: 90px 0 100px;
+  }
+
+  .rsvp-editorial-eyebrow{
+    margin-bottom: 20px;
+    font-size: clamp(16px, 5vw, 24px);
+    letter-spacing: .14em;
+    line-height: 1.45;
+  }
+
+  .rsvp-editorial-title{
+    margin-bottom: 24px;
+    font-size: clamp(40px, 12vw, 62px);
+    line-height: 1.02;
+  }
+
+  .rsvp-editorial-text{
+    font-size: clamp(18px, 5.2vw, 24px);
+    line-height: 1.55;
+  }
+
+  .rsvp-editorial-actions{
+    margin-top: 34px;
+  }
+
+  .rsvp-editorial-btn{
+    min-width: 100%;
+    padding: 22px 26px;
+    font-size: 28px;
+  }
+}
