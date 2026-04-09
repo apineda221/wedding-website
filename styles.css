@@ -2815,3 +2815,104 @@ filter: blur(30px);
     font-size: clamp(22px, 6vw, 28px);
   }
 }
+
+/* =========================
+   DRESS CODE MODAL
+   ========================= */
+.dresscode-trigger{
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(34px, 3vw, 54px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.dresscode-trigger:hover{
+  opacity: .85;
+}
+
+.dresscode-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.dresscode-modal[hidden]{
+  display: none !important;
+}
+
+.dresscode-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 10, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dresscode-modal-content{
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 900px);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 22px 22px 18px;
+  border-radius: 18px;
+  background: #fdfaf7;
+  box-shadow: 0 28px 70px rgba(0,0,0,.28);
+}
+
+.dresscode-modal-title{
+  margin: 0 0 14px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 2vw, 36px);
+  color: var(--burgundy);
+  text-align: center;
+}
+
+.dresscode-modal-image{
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.dresscode-close{
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(80,27,33,.10);
+  color: var(--burgundy);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dresscode-close:hover{
+  background: rgba(80,27,33,.16);
+}
+
+@media (max-width: 860px){
+  .dresscode-modal-content{
+    width: 94vw;
+    padding: 18px 18px 14px;
+  }
+
+  .dresscode-trigger{
+    font-size: clamp(30px, 9vw, 44px);
+  }
+}
