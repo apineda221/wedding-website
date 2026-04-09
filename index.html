@@ -293,18 +293,19 @@
     </div>
   </section>
   
-  <!-- FAQ / THINGS TO KNOW -->
+    <!-- FAQ / THINGS TO KNOW -->
   <section id="faq" class="section faq-section soft-transition">
     <div class="wrap faq-wrap">
       <p class="faq-eyebrow">Other Details You’ll Want to Know</p>
 
       <div class="faq-grid">
         <div class="faq-block">
-          <h3>Dress Code</h3>
+          <button class="dresscode-trigger" type="button" id="dresscodeTrigger">
+            Dress Code
+          </button>
           <p>
-            Our wedding attire is formal / elegant. We encourage guests to dress in their best attire to celebrate
-            this special day with us. We kindly ask guests to avoid wearing white, burgundy, or red, as these colors
-            are part of our wedding palette.
+            Our wedding attire is formal / elegant. Click “Dress Code” above to view visual inspiration.
+            We kindly ask guests to avoid wearing white, burgundy, or red, as these colors are part of our wedding palette.
           </p>
         </div>
 
@@ -423,7 +424,26 @@
   <button id="musicToggle" class="music-toggle" type="button" aria-pressed="false">
     Audio On
   </button>
+  
+  <!-- Dress Code Modal -->
+  <div class="dresscode-modal" id="dresscodeModal" hidden>
+    <div class="dresscode-modal-backdrop" id="dresscodeBackdrop"></div>
 
+    <div class="dresscode-modal-content" role="dialog" aria-modal="true" aria-labelledby="dresscodeModalTitle">
+      <button class="dresscode-close" id="dresscodeClose" type="button" aria-label="Close dress code image">
+        ×
+      </button>
+
+      <p class="dresscode-modal-title" id="dresscodeModalTitle">Dress Code Inspiration</p>
+
+      <img
+        src="./assets/dresscode.jpeg"
+        alt="Wedding dress code inspiration"
+        class="dresscode-modal-image"
+      />
+    </div>
+  </div>
+  
   <!-- JS -->
   <script src="./script.js" defer></script>
 </body>
