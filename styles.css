@@ -2649,3 +2649,118 @@ filter: blur(30px);
     font-size: 28px;
   }
 }
+
+/* =========================
+   FINAL FOOTER
+   ========================= */
+.site-footer{
+  padding: 90px 0 80px;
+  background: #f6f2ef;
+}
+
+.site-footer-wrap{
+  max-width: 1320px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 90px;
+  align-items: start;
+}
+
+.site-footer-script{
+  margin: 0 0 34px;
+  font-family: 'Italianno', cursive;
+  font-size: clamp(48px, 5vw, 82px);
+  line-height: 1;
+  color: #111;
+}
+
+.site-footer-label{
+  margin: 0 0 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 2vw, 34px);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #111;
+}
+
+.site-footer-contact{
+  margin-bottom: 30px;
+}
+
+.site-footer-contact p,
+.site-footer-email,
+.site-footer-message,
+.site-footer-location p{
+  margin: 0 0 12px;
+  font-size: clamp(24px, 2vw, 38px);
+  line-height: 1.45;
+  color: #171717;
+}
+
+.site-footer-email{
+  margin-top: 10px;
+}
+
+.site-footer-message{
+  margin-bottom: 46px;
+  max-width: 840px;
+}
+
+.site-footer-locations{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+}
+
+.site-footer-location-title{
+  margin: 0 0 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 2.2vw, 44px);
+  font-weight: 500;
+  color: #111;
+}
+
+/* Mobile */
+@media (max-width: 960px){
+  .site-footer-wrap{
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .site-footer-locations{
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width: 860px){
+  .site-footer{
+    padding: 70px 0 60px;
+  }
+
+  .site-footer-script{
+    font-size: clamp(38px, 12vw, 56px);
+    margin-bottom: 24px;
+  }
+
+  .site-footer-label{
+    font-size: clamp(20px, 6vw, 26px);
+    margin-bottom: 16px;
+  }
+
+  .site-footer-contact p,
+  .site-footer-email,
+  .site-footer-message,
+  .site-footer-location p{
+    font-size: clamp(18px, 5.2vw, 24px);
+    line-height: 1.5;
+  }
+
+  .site-footer-location-title{
+    font-size: clamp(24px, 7vw, 30px);
+  }
+
+  .site-footer-message{
+    margin-bottom: 28px;
+  }
+}
