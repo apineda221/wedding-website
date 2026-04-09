@@ -2233,8 +2233,8 @@ filter: blur(30px);
 .familia-dates-wrap{
   max-width: 1380px;
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 54px;
+  grid-template-columns: 420px 1fr;
+  gap: 56px;
   align-items: start;
 }
 
@@ -2242,23 +2242,32 @@ filter: blur(30px);
   padding-top: 10px;
   position: relative;
   z-index: 3;
+  max-width: 420px;
 }
 
 .familia-dates-title{
+  margin: 0 0 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 4.2vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: rgba(80,27,33,.92);
+}
+
+/* THIS is the paragraph fix */
+.familia-dates-text{
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(72px, 9vw, 132px);
-  line-height: .88;
-  letter-spacing: -.04em;
-  color: rgba(80,27,33,.92);
-  position: relative;
-  z-index: 3;
+  font-size: clamp(18px, 1.35vw, 22px);
+  line-height: 1.45;
+  color: rgba(80,27,33,.88);
+  max-width: 360px;
 }
 
 .familia-dates-right{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 42px;
+  gap: 34px;
   align-items: start;
 }
 
@@ -2288,7 +2297,7 @@ filter: blur(30px);
   margin-top: 14px;
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(58px, 5vw, 88px);
+  font-size: clamp(46px, 4vw, 72px);
   line-height: 1;
   color: rgba(80,27,33,.92);
   position: relative;
@@ -2297,16 +2306,16 @@ filter: blur(30px);
 
 .familia-line{
   width: 1px;
-  height: 72px;
-  margin: 20px auto 18px;
+  height: 64px;
+  margin: 18px auto 16px;
   background: rgba(80,27,33,.18);
 }
 
 .familia-label{
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 2vw, 42px);
-  line-height: 1.05;
+  font-size: clamp(20px, 1.4vw, 28px);
+  line-height: 1.15;
   color: rgba(80,27,33,.92);
 }
 
@@ -2319,14 +2328,22 @@ filter: blur(30px);
 
   .familia-dates-left{
     padding-top: 0;
-  }
-
-  .familia-dates-title{
+    max-width: 760px;
+    margin: 0 auto;
     text-align: center;
   }
 
+  .familia-dates-title{
+    font-size: clamp(40px, 6vw, 60px);
+  }
+
+  .familia-dates-text{
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
   .familia-dates-right{
-    gap: 26px;
+    gap: 24px;
   }
 }
 
@@ -2340,31 +2357,41 @@ filter: blur(30px);
     gap: 28px;
   }
 
-  .familia-dates-title{
+  .familia-dates-left{
     text-align: center;
-    font-size: clamp(52px, 15vw, 82px);
-    line-height: .9;
+  }
+
+  .familia-dates-title{
+    font-size: clamp(34px, 10vw, 52px);
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+
+  .familia-dates-text{
+    font-size: clamp(17px, 4.8vw, 20px);
+    line-height: 1.5;
+    max-width: 100%;
   }
 
   .familia-dates-right{
     grid-template-columns: 1fr;
-    gap: 34px;
+    gap: 30px;
     max-width: 360px;
     margin: 0 auto;
   }
 
   .familia-number{
     margin-top: 12px;
-    font-size: 56px;
+    font-size: 52px;
   }
 
   .familia-line{
-    height: 58px;
-    margin: 18px auto 16px;
+    height: 52px;
+    margin: 16px auto 14px;
   }
 
   .familia-label{
-    font-size: 30px;
+    font-size: 26px;
   }
 }
 
