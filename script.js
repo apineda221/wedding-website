@@ -378,3 +378,35 @@ document.addEventListener("keydown", (event) => {
 
   applyLanguage(currentLang);
 })();
+
+// ===============================
+// Language Toggle EN / ES
+// ===============================
+(() => {
+  const langBtn = document.getElementById("langToggle");
+  if (!langBtn) return;
+
+  const translatableEls = document.querySelectorAll("[data-en][data-es]");
+  let currentLang = localStorage.getItem("siteLanguage") || "en";
+
+  function applyLanguage(lang) {
+    translatableEls.forEach((el) => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text !== null) {
+        el.innerHTML = text;
+      }
+    });
+
+    document.documentElement.lang = lang === "es" ? "es" : "en";
+    langBtn.textContent = lang === "en" ? "Español" : "English";
+    langBtn.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
+    localStorage.setItem("siteLanguage", lang);
+  }
+
+  langBtn.addEventListener("click", () => {
+    currentLang = currentLang === "en" ? "es" : "en";
+    applyLanguage(currentLang);
+  });
+
+  applyLanguage(currentLang);
+})();
