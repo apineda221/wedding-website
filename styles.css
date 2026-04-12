@@ -2945,3 +2945,52 @@ filter: blur(30px);
     font-size: 14px;
   }
 }
+
+/* =========================
+   FLOATING CONTROLS
+   ========================= */
+.floating-controls{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.floating-pill{
+  border: none;
+  border-radius: 999px;
+  background: rgba(80,27,33,.94);
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0,0,0,.16);
+  transition: transform .2s ease, filter .2s ease, background .2s ease;
+}
+
+.floating-pill:hover{
+  transform: translateY(-1px);
+  filter: brightness(.97);
+}
+
+.floating-pill:active{
+  transform: translateY(0);
+}
+
+@media (max-width: 860px){
+  .floating-controls{
+    right: 16px;
+    bottom: 18px;
+    gap: 10px;
+  }
+
+  .floating-pill{
+    padding: 11px 16px;
+    font-size: 14px;
+  }
+}
