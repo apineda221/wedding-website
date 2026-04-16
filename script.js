@@ -410,3 +410,35 @@ document.addEventListener("keydown", (event) => {
 
   applyLanguage(currentLang);
 })();
+
+// ===============================
+// Gift Info Modal
+// ===============================
+(() => {
+  const trigger = document.getElementById("giftInfoTrigger");
+  const modal = document.getElementById("giftModal");
+  const closeBtn = document.getElementById("giftModalClose");
+  const backdrop = document.getElementById("giftModalBackdrop");
+
+  if (!trigger || !modal || !closeBtn || !backdrop) return;
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  trigger.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+})();
