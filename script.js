@@ -442,3 +442,40 @@ document.addEventListener("keydown", (event) => {
     }
   });
 })();
+
+// ===============================
+// Proposal Video Modal
+// ===============================
+(() => {
+  const trigger = document.getElementById("proposalModalTrigger");
+  const modal = document.getElementById("proposalModal");
+  const closeBtn = document.getElementById("proposalModalClose");
+  const backdrop = document.getElementById("proposalModalBackdrop");
+  const iframe = document.getElementById("proposalModalIframe");
+
+  if (!trigger || !modal || !closeBtn || !backdrop || !iframe) return;
+
+  const baseSrc = iframe.getAttribute("src");
+
+  function openModal() {
+    iframe.src = baseSrc.includes("autoplay=1") ? baseSrc : `${baseSrc}&autoplay=1`;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    iframe.src = baseSrc; // stops the video
+  }
+
+  trigger.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+})();
