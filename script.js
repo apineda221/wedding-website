@@ -37,8 +37,11 @@ mobileNav?.querySelectorAll("a").forEach((link) => {
 document.addEventListener("click", (event) => {
   if (!mobileNav || !menuBtn) return;
 
-  const clickedInsideNav = mobileNav.contains(event.target);
-  const clickedMenuBtn = menuBtn.contains(event.target);
+  const target = event.target;
+  if (!(target instanceof Node)) return;
+
+  const clickedInsideNav = mobileNav.contains(target);
+  const clickedMenuBtn = menuBtn.contains(target);
 
   if (!clickedInsideNav && !clickedMenuBtn) {
     closeMobileMenu();
@@ -113,12 +116,11 @@ document.addEventListener("keydown", (event) => {
 
   if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
 
-  // Wedding date: November 27, 2026
   const targetDate = new Date("2026-11-27T00:00:00");
 
   function updateCountdown() {
     const now = new Date();
-    const diff = targetDate - now;
+    const diff = targetDate.getTime() - now.getTime();
 
     if (diff <= 0) {
       daysEl.textContent = "0";
@@ -155,7 +157,7 @@ document.addEventListener("keydown", (event) => {
   let userStartedMusic = false;
   let wasPlayingBeforeVideo = false;
 
-  bgMusic.volume = 0.18; // soft volume
+  bgMusic.volume = 0.18;
 
   async function playMusic() {
     try {
@@ -182,7 +184,6 @@ document.addEventListener("keydown", (event) => {
     }
   });
 
-  // Load YouTube Iframe API
   const tag = document.createElement("script");
   tag.src = "https://www.youtube.com/iframe_api";
   document.head.appendChild(tag);
@@ -191,21 +192,17 @@ document.addEventListener("keydown", (event) => {
 
   window.onYouTubeIframeAPIReady = function () {
     const iframe = document.getElementById("proposalVideo");
-    if (!iframe) return;
+    if (!iframe || typeof YT === "undefined" || !YT.Player) return;
 
     player = new YT.Player("proposalVideo", {
       events: {
-        onStateChange: function (event) {
-          // YT.PlayerState.PLAYING = 1
+        onStateChange(event) {
           if (event.data === 1) {
             wasPlayingBeforeVideo = !bgMusic.paused;
             pauseMusic();
           }
 
-          // YT.PlayerState.PAUSED = 2
-          // YT.PlayerState.ENDED = 0
           if ((event.data === 2 || event.data === 0) && userStartedMusic && wasPlayingBeforeVideo) {
-            // optional auto-resume
             playMusic();
             wasPlayingBeforeVideo = false;
           }
@@ -272,7 +269,7 @@ document.addEventListener("keydown", (event) => {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   let currentIndex = 0;
-  const holdTime = prefersReduced ? 180 : 360; // quicker flip
+  const holdTime = prefersReduced ? 180 : 360;
   const endDelay = prefersReduced ? 120 : 300;
   let intervalId;
 
@@ -360,38 +357,6 @@ document.addEventListener("keydown", (event) => {
   function applyLanguage(lang) {
     translatableEls.forEach((el) => {
       const text = el.getAttribute(`data-${lang}`);
-      if (text) {
-        el.innerHTML = text;
-      }
-    });
-
-    document.documentElement.lang = lang === "es" ? "es" : "en";
-    langBtn.textContent = lang === "en" ? "Español" : "English";
-    langBtn.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
-    localStorage.setItem("siteLanguage", lang);
-  }
-
-  langBtn.addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "es" : "en";
-    applyLanguage(currentLang);
-  });
-
-  applyLanguage(currentLang);
-})();
-
-// ===============================
-// Language Toggle EN / ES
-// ===============================
-(() => {
-  const langBtn = document.getElementById("langToggle");
-  if (!langBtn) return;
-
-  const translatableEls = document.querySelectorAll("[data-en][data-es]");
-  let currentLang = localStorage.getItem("siteLanguage") || "en";
-
-  function applyLanguage(lang) {
-    translatableEls.forEach((el) => {
-      const text = el.getAttribute(`data-${lang}`);
       if (text !== null) {
         el.innerHTML = text;
       }
@@ -455,10 +420,13 @@ document.addEventListener("keydown", (event) => {
 
   if (!trigger || !modal || !closeBtn || !backdrop || !iframe) return;
 
-  const baseSrc = iframe.getAttribute("src");
+  const cleanBaseSrc = iframe.getAttribute("src") || "";
+  const autoplaySrc = cleanBaseSrc.includes("?")
+    ? `${cleanBaseSrc}&autoplay=1`
+    : `${cleanBaseSrc}?autoplay=1`;
 
   function openModal() {
-    iframe.src = baseSrc.includes("autoplay=1") ? baseSrc : `${baseSrc}&autoplay=1`;
+    iframe.src = autoplaySrc;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
   }
@@ -466,7 +434,7 @@ document.addEventListener("keydown", (event) => {
   function closeModal() {
     modal.hidden = true;
     document.body.style.overflow = "";
-    iframe.src = baseSrc; // stops the video
+    iframe.src = cleanBaseSrc;
   }
 
   trigger.addEventListener("click", openModal);
