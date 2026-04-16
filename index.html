@@ -400,6 +400,27 @@
       </div>
     </div>
   </section>
+
+    <!-- PROPOSAL VIDEO SECTION -->
+  <section id="proposal-feature" class="section proposal-feature-section soft-transition">
+    <div class="wrap proposal-feature-wrap">
+      <p class="proposal-feature-eyebrow">A Moment We’ll Never Forget</p>
+
+      <h2 class="proposal-feature-title">
+        Watch the day that started it all.
+      </h2>
+
+      <p class="proposal-feature-text">
+        The moment everything changed — the beginning of forever.
+      </p>
+
+      <div class="proposal-feature-actions">
+        <button class="proposal-feature-btn" id="proposalModalTrigger" type="button">
+          View Here
+        </button>
+      </div>
+    </div>
+  </section>
   
    <!-- FINAL FOOTER -->
   <footer class="site-footer">
@@ -515,6 +536,29 @@
       <p class="gift-modal-note">
         You can update these details with your real payment info anytime.
       </p>
+    </div>
+  </div>
+
+    <!-- Proposal Video Modal -->
+  <div class="proposal-modal" id="proposalModal" hidden>
+    <div class="proposal-modal-backdrop" id="proposalModalBackdrop"></div>
+
+    <div class="proposal-modal-content" role="dialog" aria-modal="true" aria-labelledby="proposalModalTitle">
+      <button class="proposal-modal-close" id="proposalModalClose" type="button" aria-label="Close proposal video">
+        ×
+      </button>
+
+      <p class="proposal-modal-title" id="proposalModalTitle">The Proposal</p>
+
+      <div class="proposal-modal-video">
+        <iframe
+          id="proposalModalIframe"
+          src="https://www.youtube.com/embed/_RX36_ZnRD8?rel=0"
+          title="Proposal Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
   </div>
   
