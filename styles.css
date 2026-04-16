@@ -2994,3 +2994,236 @@ filter: blur(30px);
     font-size: 14px;
   }
 }
+
+/* =========================
+   GIFTING SECTION
+   ========================= */
+.gifting-editorial{
+  padding: 110px 0 120px;
+  background: #f6f2ef;
+  border-top: 1px solid rgba(80,27,33,.08);
+}
+
+.gifting-editorial-wrap{
+  max-width: 1320px;
+  text-align: center;
+}
+
+.gifting-editorial-eyebrow{
+  margin: 0 0 24px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2vw, 34px);
+  letter-spacing: .18em;
+  line-height: 1.45;
+  text-transform: uppercase;
+  color: #1d1b1b;
+}
+
+.gifting-editorial-title{
+  margin: 0 auto 30px;
+  max-width: 1350px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(46px, 5.5vw, 96px);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.04em;
+  color: #111;
+}
+
+.gifting-editorial-text{
+  max-width: 920px;
+  margin: 0 auto;
+  font-size: clamp(22px, 1.8vw, 34px);
+  line-height: 1.55;
+  color: #2b2a2a;
+}
+
+.gifting-editorial-actions{
+  margin-top: 46px;
+}
+
+.gifting-editorial-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 380px;
+  padding: 24px 48px;
+  border: none;
+  background: var(--burgundy);
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 2vw, 38px);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(0,0,0,.10);
+}
+
+.gifting-editorial-btn:hover{
+  filter: brightness(.96);
+}
+
+/* =========================
+   GIFT MODAL
+   ========================= */
+.gift-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.gift-modal[hidden]{
+  display: none !important;
+}
+
+.gift-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(20,10,10,.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.gift-modal-content{
+  position: relative;
+  z-index: 2;
+  width: min(92vw, 860px);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 34px 30px 28px;
+  border-radius: 22px;
+  background: #fdfaf7;
+  box-shadow: 0 28px 70px rgba(0,0,0,.28);
+}
+
+.gift-modal-eyebrow{
+  margin: 0 0 8px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(18px, 1.8vw, 24px);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(80,27,33,.75);
+}
+
+.gift-modal-title{
+  margin: 0 0 16px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 3vw, 54px);
+  font-weight: 500;
+  color: var(--burgundy);
+}
+
+.gift-modal-copy{
+  max-width: 620px;
+  margin: 0 auto 28px;
+  text-align: center;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.55;
+  color: #2a2523;
+}
+
+.gift-modal-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.gift-modal-card{
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(80,27,33,.12);
+  border-radius: 14px;
+  background: rgba(80,27,33,.04);
+}
+
+.gift-modal-label{
+  margin: 0 0 8px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(22px, 2vw, 28px);
+  font-weight: 600;
+  color: var(--burgundy);
+}
+
+.gift-modal-value{
+  margin: 0;
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.45;
+  color: #222;
+  word-break: break-word;
+}
+
+.gift-modal-note{
+  margin: 24px 0 0;
+  text-align: center;
+  font-size: 15px;
+  color: #6a6763;
+}
+
+.gift-modal-close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(80,27,33,.10);
+  color: var(--burgundy);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gift-modal-close:hover{
+  background: rgba(80,27,33,.16);
+}
+
+/* Mobile */
+@media (max-width: 860px){
+  .gifting-editorial{
+    padding: 90px 0 100px;
+  }
+
+  .gifting-editorial-eyebrow{
+    margin-bottom: 18px;
+    font-size: clamp(16px, 5vw, 24px);
+    letter-spacing: .14em;
+  }
+
+  .gifting-editorial-title{
+    margin-bottom: 22px;
+    font-size: clamp(36px, 10vw, 58px);
+    line-height: 1.02;
+  }
+
+  .gifting-editorial-text{
+    font-size: clamp(18px, 5vw, 24px);
+    line-height: 1.55;
+  }
+
+  .gifting-editorial-actions{
+    margin-top: 32px;
+  }
+
+  .gifting-editorial-btn{
+    min-width: 100%;
+    padding: 22px 24px;
+    font-size: 28px;
+  }
+
+  .gift-modal-content{
+    width: 94vw;
+    padding: 28px 18px 20px;
+  }
+
+  .gift-modal-grid{
+    grid-template-columns: 1fr;
+  }
+}
