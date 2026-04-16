@@ -3227,3 +3227,186 @@ filter: blur(30px);
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================
+   PROPOSAL FEATURE SECTION
+   ========================= */
+.proposal-feature-section{
+  padding: 110px 0 120px;
+  background: var(--burgundy);
+  color: #fff;
+}
+
+.proposal-feature-wrap{
+  max-width: 1200px;
+  text-align: center;
+}
+
+.proposal-feature-eyebrow{
+  margin: 0 0 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(20px, 2vw, 30px);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.86);
+}
+
+.proposal-feature-title{
+  margin: 0 0 22px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5vw, 88px);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: -.03em;
+  color: #fff;
+}
+
+.proposal-feature-text{
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: clamp(20px, 1.8vw, 30px);
+  line-height: 1.5;
+  color: rgba(255,255,255,.92);
+}
+
+.proposal-feature-actions{
+  margin-top: 40px;
+}
+
+.proposal-feature-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  padding: 22px 42px;
+  border: 1px solid rgba(255,255,255,.24);
+  background: rgba(255,255,255,.12);
+  color: #fff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 2vw, 36px);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.proposal-feature-btn:hover{
+  background: rgba(255,255,255,.18);
+}
+
+/* =========================
+   PROPOSAL MODAL
+   ========================= */
+.proposal-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 520;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.proposal-modal[hidden]{
+  display: none !important;
+}
+
+.proposal-modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(20,10,10,.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.proposal-modal-content{
+  position: relative;
+  z-index: 2;
+  width: min(94vw, 980px);
+  padding: 26px 26px 20px;
+  border-radius: 20px;
+  background: #fdfaf7;
+  box-shadow: 0 28px 70px rgba(0,0,0,.30);
+}
+
+.proposal-modal-title{
+  margin: 0 0 18px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 2.4vw, 44px);
+  color: var(--burgundy);
+}
+
+.proposal-modal-video{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #000;
+}
+
+.proposal-modal-video iframe{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.proposal-modal-close{
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(80,27,33,.10);
+  color: var(--burgundy);
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.proposal-modal-close:hover{
+  background: rgba(80,27,33,.16);
+}
+
+@media (max-width: 860px){
+  .proposal-feature-section{
+    padding: 90px 0 100px;
+  }
+
+  .proposal-feature-eyebrow{
+    font-size: clamp(16px, 5vw, 22px);
+    margin-bottom: 14px;
+  }
+
+  .proposal-feature-title{
+    font-size: clamp(36px, 11vw, 58px);
+    margin-bottom: 16px;
+  }
+
+  .proposal-feature-text{
+    font-size: clamp(18px, 5vw, 22px);
+  }
+
+  .proposal-feature-actions{
+    margin-top: 28px;
+  }
+
+  .proposal-feature-btn{
+    min-width: 100%;
+    padding: 20px 24px;
+    font-size: 28px;
+  }
+
+  .proposal-modal-content{
+    width: 94vw;
+    padding: 20px 18px 16px;
+  }
+}
